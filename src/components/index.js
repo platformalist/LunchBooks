@@ -1,3 +1,4 @@
+export { Book } from "./book"
 export { Box } from "./box"
 export { Flex } from "./flex"
 export { Footer } from "./footer"

@@ -1,6 +1,12 @@
 import React from "react"
-import { Box } from "components"
+import { Link } from "gatsby"
+import { Box, Text } from "components"
 
-const Footer = () => <Box width="500px" height="500px" bg="yellow" />
+const Footer = ({ data }) => (
+  <Box textAlign="center">
+    <Link to="/page-2/">Go to page 2</Link>
+    <Text children={data.text} />
+  </Box>
+)
 
 export default Footer
