@@ -2,36 +2,54 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Book, Box, Flex } from "components"
+
+import marsCover from "images/mars_cover.jpg"
+import treeCover from "images/tree_cover.jpg"
+import dustCover from "images/dust_cover.jpg"
+import fieldCover from "images/field_cover.jpg"
+
+import { Book, Box, Flex, InfoWindow } from "components"
 
 const books = [
   {
-    color: "black",
+    dockColor: "#F5F5F5",
     genre: "Genre",
     title: "Book 1",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    cover: marsCover,
+    buttonText: "THIS IS BUTTON TEXT",
+    buttonLink: "https://www.kobo.com",
   },
   {
-    color: "black",
+    dockColor: "#EDEDED",
     genre: "Genre",
     title: "Book 2",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    cover: treeCover,
+    buttonText: "THIS IS BUTTON TEXT",
+    buttonLink: "https://www.kobo.com",
   },
   {
-    color: "black",
+    dockColor: "#F5F5F5",
     genre: "Genre",
     title: "Book 3",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    cover: dustCover,
+    buttonText: "THIS IS BUTTON TEXT",
+    buttonLink: "https://www.kobo.com",
   },
   {
-    color: "black",
+    dockColor: "#EDEDED",
     genre: "Genre",
     title: "Book 4",
     synopsis:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in",
+    cover: fieldCover,
+    buttonText: "THIS IS BUTTON TEXT",
+    buttonLink: "https://www.kobo.com",
   },
 ]
 
@@ -39,22 +57,24 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     {/* Banner Image */}
-    <Box mb={4} width="100%" height="200px" bg="black" />
+    <InfoWindow />
     {/* Books */}
 
     <Flex justifyContent="flex-end" width="100%">
-      <Flex flexWrap="wrap" justifyContent="center" width="100%">
+      <Box width="100%">
         {books.map((book, index) => (
           <Book
-            color={book.color}
+            dockColor={book.dockColor}
             genre={book.genre}
             synopsis={book.synopsis}
             title={book.title}
+            cover={book.cover}
             index={index}
-            open={false}
+            buttonText={book.buttonText}
+            buttonLink={book.buttonLink}
           />
         ))}
-      </Flex>
+      </Box>
     </Flex>
   </Layout>
 )
