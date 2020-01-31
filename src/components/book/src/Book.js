@@ -7,7 +7,7 @@ const Book = ({ color, genre, synopsis, title, index, open }) => {
   return (
     <Flex
       className={hover ? "hovered" : ""}
-      css={{ "&.hovered": { opacity: 0.3 } }}
+      css={{ "&.hovered": { opacity: 0.6 } }}
     >
       <Flex width="100%" my={3} mx={3}>
         <Box mb={4}>
