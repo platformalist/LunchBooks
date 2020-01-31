@@ -37,7 +37,7 @@ const Book = ({
           position="relative"
           p={3}
           flexDirection="column"
-          justifyContent="flex-end"
+          justifyContent="center"
         >
           <Box
             position="absolute"
