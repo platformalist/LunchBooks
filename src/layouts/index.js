@@ -9,7 +9,15 @@ import { Footer, GlobalStyles, Header, Theme } from "components"
 
 import "./fonts.css"
 
+const today = new Date()
+
 const Layout = ({ children }) => {
+  // Check the year. If 2020, just write (c) 2020 PEN NAME.
+  // If not, write (c) 2020-202X PEN NAME.
+  let thisYear = today.getFullYear()
+  let finalString =
+    thisYear === 2020 ? "© " + thisYear + " " : "© 2020-" + thisYear + " "
+
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
@@ -20,16 +28,15 @@ const Layout = ({ children }) => {
         <GlobalStyles />
         <Header
           data={{
-            title: "The Name of This Site",
+            title: "PEN NAME",
             text:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "The author of 'A Being of Some Cosmic Importance'. PEN NAME writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter.",
           }}
         />
         <main>{children}</main>
         <Footer
           data={{
-            text:
-              "This is the footer text. Copyright 2020 Totally Legitimate Corporation. All Rights Reserved. Patents pending. Etc.",
+            text: "" + finalString + "PEN NAME. All Rights Reserved.",
           }}
         />
       </Wrapper>
