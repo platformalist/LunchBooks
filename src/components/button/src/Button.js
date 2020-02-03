@@ -13,7 +13,7 @@ const Button = ({ link, label }) => {
       css={{ "&.hovered": { opacity: 0.7 } }}
       className={hover ? "hovered" : ""}
       mr={3}
-      my={3}
+      my={[1, 1, 3]}
     >
       <a
         href={link}

@@ -3,12 +3,26 @@ import { Box, Button, Flex, Heading, Text } from "components"
 
 const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
   const [hover, setHover] = useState(false)
-  let dockColor = index % 2 === 1 ? "#F8F6F4" : "#F3F2F1"
+
+  const thinScreen = window.innerWidth < 1000
+  const textJustify = thinScreen ? "center" : "left"
+
+  let dockColor = thinScreen ? "#FFFDFA" : checkIndex(index)
+
+  function checkIndex(index) {
+    let dock = index % 2 === 1 ? "#F8F6F4" : "#F3F2F1"
+    return dock
+  }
 
   return (
     <Flex>
       {/* The background holding the whole book. */}
-      <Flex width="100%" mb={4}>
+      <Flex
+        width="100%"
+        mb={4}
+        flexWrap={["wrap", "wrap", "nowrap"]}
+        justifyContent={["center", "center", "flex-start"]}
+      >
         <Box>
           {/* The actual book cover */}
           <Box
@@ -40,16 +54,28 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
               "&.hovered": { opacity: 0.3 },
             }}
           />
-          <Box position="relative">
-            <Heading children={title} fontWeight={800} size={700} />
+          <Flex
+            position="relative"
+            flexDirection="column"
+            alignItems={["center", "center", "flex-start"]}
+          >
+            <Heading
+              textAlign={["center", "center", "left"]}
+              children={title}
+              fontWeight={800}
+              size={700}
+            />
             <Text children={genre} fontWeight={400} />
-            <Flex flexWrap="wrap">
+            <Flex
+              flexWrap="wrap"
+              justifyContent={["center", "center", "flex-start"]}
+            >
               {buttons.map((button, index) => (
                 <Button link={button.link} label={button.label} index={index} />
               ))}
             </Flex>
             <Text children={synopsis} fontWeight={400} />
-          </Box>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>
