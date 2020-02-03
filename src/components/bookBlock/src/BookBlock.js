@@ -4,15 +4,7 @@ import { Box, Button, Flex, Heading, Text } from "components"
 const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
   const [hover, setHover] = useState(false)
 
-  const thinScreen = window.innerWidth < 1000
-  const textJustify = thinScreen ? "center" : "left"
-
-  let dockColor = thinScreen ? "#FFFDFA" : checkIndex(index)
-
-  function checkIndex(index) {
-    let dock = index % 2 === 1 ? "#F8F6F4" : "#F3F2F1"
-    return dock
-  }
+  let dockColor = index % 2 === 1 ? "#F8F6F4" : "#F3F2F1"
 
   return (
     <Flex>
