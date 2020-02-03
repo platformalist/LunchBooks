@@ -4,8 +4,6 @@ import { Wrapper } from "components"
 import { ThemeProvider } from "emotion-theming"
 import Helmet from "react-helmet"
 
-import headerImage from "images/mars.jpg"
-
 // Project components
 import { Footer, GlobalStyles, Header, Theme } from "components"
 
