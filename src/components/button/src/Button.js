@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { Box, Flex, Text } from "components"
 
-const Button = ({ buttonLink, buttonText }) => {
+const Button = ({ link, label }) => {
   const [hover, setHover] = useState(false)
   return (
     <Box
@@ -10,11 +10,13 @@ const Button = ({ buttonLink, buttonText }) => {
       onMouseLeave={() => setHover(false)}
       height="40px"
       width="156px"
-      css={{ "&.hovered": { opacity: 0.6 } }}
+      css={{ "&.hovered": { opacity: 0.7 } }}
       className={hover ? "hovered" : ""}
+      mr={3}
+      my={3}
     >
       <a
-        href={buttonLink}
+        href={link}
         css={{
           textDecoration: "none",
         }}
@@ -30,7 +32,7 @@ const Button = ({ buttonLink, buttonText }) => {
           width="156px"
         >
           <Text
-            children={buttonText}
+            children={label}
             css={{
               textDecoration: "none",
               fontWeight: "bold",

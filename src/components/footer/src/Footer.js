@@ -1,9 +1,9 @@
 import React from "react"
-import { Box, Text } from "components"
+import { Box, Heading } from "components"
 
 const Footer = ({ data }) => (
-  <Box textAlign="center">
-    <Text children={data.text} />
+  <Box as="footer" textAlign="center">
+    <Heading children={data.text} fontWeight={800} size={600} />
   </Box>
 )
 

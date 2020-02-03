@@ -24,7 +24,7 @@ Text.defaultProps = {
   "data-component-id": "typography.text",
   mt: 0,
   mb: 0,
-  size: 500,
+  size: 400,
   color: "text",
 }
 
