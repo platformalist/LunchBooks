@@ -24,19 +24,19 @@ const Layout = ({ children }) => {
         {/* Enable iPhone X and greater env() padding for properly avoiding bottom bar */}
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
       </Helmet>
-      <Wrapper py={64} px={5}>
+      <Wrapper py={[6, 6, 8]} px={5}>
         <GlobalStyles />
         <Header
           data={{
-            title: "PEN NAME",
+            title: "James Prower",
             text:
-              "The author of 'A Being of Some Cosmic Importance'. PEN NAME writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter.",
+              "The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter.",
           }}
         />
         <main>{children}</main>
         <Footer
           data={{
-            text: "" + finalString + "PEN NAME. All Rights Reserved.",
+            text: "" + finalString + "James Prower. All Rights Reserved.",
           }}
         />
       </Wrapper>

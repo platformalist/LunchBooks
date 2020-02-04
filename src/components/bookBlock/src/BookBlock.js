@@ -11,7 +11,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
       {/* The background holding the whole book. */}
       <Flex
         width="100%"
-        mb={4}
+        mb={[3, 3, 8]}
         flexWrap={["wrap", "wrap", "nowrap"]}
         justifyContent={["center", "center", "flex-start"]}
       >
@@ -20,6 +20,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
           <Box
             height="300px"
             width="200px"
+            mb={[4, 4, 0]}
             css={{
               backgroundImage: "url(" + cover + ")",
               backgroundSize: "cover",
@@ -40,7 +41,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
             left={0}
             width="100%"
             height="100%"
-            bg={dockColor}
+            bg={["background", "background", dockColor]}
             className={hover ? "hovered" : ""}
             css={{
               "&.hovered": { opacity: 0.3 },
@@ -57,7 +58,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
               fontWeight={800}
               size={700}
             />
-            <Text children={genre} fontWeight={400} />
+            <Text children={genre} mb={[2, 2, 3]} fontWeight={400} />
             <Flex
               flexWrap="wrap"
               justifyContent={["center", "center", "flex-start"]}
@@ -66,7 +67,12 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
                 <Button link={button.link} label={button.label} index={index} />
               ))}
             </Flex>
-            <Text children={synopsis} fontWeight={400} />
+            <Text
+              children={synopsis}
+              mt={2}
+              textAlign={["center", "center", "left"]}
+              fontWeight={400}
+            />
           </Flex>
         </Flex>
       </Flex>
