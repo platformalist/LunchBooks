@@ -1,6 +1,6 @@
 import React from "react"
 import { Box, Flex, Text, Heading } from "components"
-import headerImage from "images/mars.jpg"
+import headerImage from "images/header.jpg"
 
 const Header = ({ data }) => {
   return (
