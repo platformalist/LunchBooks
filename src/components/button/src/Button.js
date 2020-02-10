@@ -26,7 +26,7 @@ const Button = ({ link, label }) => {
         <Flex
           justifyContent="center"
           alignItems="center"
-          bg="#ffa636"
+          bg="#d96b1c"
           borderRadius={8}
           height="40px"
           width="156px"

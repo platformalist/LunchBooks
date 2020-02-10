@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `LunchBooks`,
-    description: `Read a book!`,
+    title: `James Prower`,
+    description: `The written works of novelist James Prower.`,
     author: `@platformalist`,
   },
   plugins: [
@@ -24,6 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
+        icon: `./src/images/favicon.png`,
       },
     },
     {
