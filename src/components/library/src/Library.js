@@ -16,6 +16,11 @@ const Library = [
         link:
           "https://www.kobo.com/ca/en/ebook/a-being-of-some-cosmic-importance",
       },
+      {
+        label: "Nook",
+        link:
+          "https://www.barnesandnoble.com/w/a-being-of-some-cosmic-importance-james-prower/1136402791?ean=2940162769965",
+      },
     ],
     synopsis:
       "An engaging vision of futuristic prisons, space travel and Martian politics. The first entry in its broader mythos, ‘A Being of Some Cosmic Importance’ establishes Prower's dystopian universe. How much power do we really have to sway the vast forces that shape us? And if we choose to use our power, are we ready to face the consequences?",
