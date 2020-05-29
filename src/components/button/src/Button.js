@@ -27,7 +27,7 @@ const Button = ({ link, label }) => {
           justifyContent="center"
           alignItems="center"
           bg="#d96b1c"
-          borderRadius={8}
+          borderRadius={6}
           height="40px"
           width="156px"
         >

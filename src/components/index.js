@@ -9,6 +9,7 @@ export { InfoWindow } from "./infoWindow"
 export { Library } from "./library"
 export { Theme } from "./theme"
 export { Wrapper } from "./wrapper"
+export { Vector } from "./vector"
 export { Heading, Paragraph, Text } from "./typography"
 export {
   COMMON,

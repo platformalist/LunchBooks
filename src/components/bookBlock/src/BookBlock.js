@@ -42,10 +42,6 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
             width="100%"
             height="100%"
             bg={["background", "background", dockColor]}
-            className={hover ? "hovered" : ""}
-            css={{
-              "&.hovered": { opacity: 0.3 },
-            }}
           />
           <Flex
             position="relative"
@@ -64,7 +60,12 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
               justifyContent={["center", "center", "flex-start"]}
             >
               {buttons.map((button, index) => (
-                <Button link={button.link} label={button.label} index={index} />
+                <Button
+                  link={button.link}
+                  label={button.label}
+                  index={index}
+                  key={"button" + index}
+                />
               ))}
             </Flex>
             <Text

@@ -20,6 +20,7 @@ const IndexPage = () => {
               synopsis={book.synopsis}
               buttons={book.buttons}
               index={index}
+              key={"bookBlock" + index}
             />
           ))}
         </Box>
