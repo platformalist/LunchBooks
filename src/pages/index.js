@@ -29,6 +29,7 @@ const IndexPage = () => {
         </Box>
       </Flex>
       <div
+        align="justify"
         className="blog-post-content"
         dangerouslySetInnerHTML={{ __html: blogs.nodes[0].html }}
       />
