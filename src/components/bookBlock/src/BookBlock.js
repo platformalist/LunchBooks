@@ -1,9 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { Box, Button, Flex, Heading, Text } from "components"
 
 const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
-  const [hover, setHover] = useState(false)
-
   let dockColor = index % 2 === 1 ? "#deddd5" : "#e8e7e1"
 
   return (
@@ -32,8 +30,6 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
           p={5}
           flexDirection="column"
           justifyContent="center"
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
         >
           <Box
             position="absolute"

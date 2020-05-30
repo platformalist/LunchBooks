@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "gatsby"
+
 import { Box, Flex, Text, Heading } from "components"
 import headerImage from "images/header.jpg"
 
@@ -6,7 +8,9 @@ const Header = ({ data }) => {
   return (
     <Box as="header" width="100%">
       <Flex justifyContent={["center", "center", "flex-end"]}>
-        <Heading mb={1} children={data.title} fontWeight={800} size={800} />
+        <Link to="/">
+          <Heading mb={1} children={data.title} fontWeight={800} size={800} />
+        </Link>
       </Flex>
       <Flex justifyContent="flex-end">
         <Text
@@ -15,8 +19,6 @@ const Header = ({ data }) => {
           children={data.text}
         />
       </Flex>
-      {/* Image Block */}
-
       <Box
         mb={[6, 6, 4]}
         width="100%"

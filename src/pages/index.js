@@ -1,10 +1,13 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 
 import { BookBlock, Box, Flex, Library } from "components"
 
 const IndexPage = () => {
+  const { blogs } = useStaticQuery(BLOG_QUERY)
+  console.log(blogs)
   return (
     <>
       <SEO title="Home" />
@@ -25,8 +28,22 @@ const IndexPage = () => {
           ))}
         </Box>
       </Flex>
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: blogs.nodes[0].html }}
+      />
     </>
   )
 }
+
+const BLOG_QUERY = graphql`
+  query MyQuery {
+    blogs: allMarkdownRemark {
+      nodes {
+        html
+      }
+    }
+  }
+`
 
 export default IndexPage
