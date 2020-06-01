@@ -7,12 +7,12 @@ import { Box, Button, Flex, Heading, Text, Wrapper } from "components"
 const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
-      <Box width="900px">
+      <Box width="900px" pt="layout.3">
         {/* Title and genre */}
         <Heading children={title} size={800} />
 
         {/* Cover */}
-        <Flex pt="layout.3">
+        <Flex pt="layout.1">
           <Box width="276px" height="412px">
             <Img fixed={cover} />
           </Box>

@@ -2,7 +2,7 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Box, Heading, PageHeader, Text, Wrapper } from "components"
+import { Box, Heading, PageHeader, Wrapper } from "components"
 
 const BlogPost = ({ title, date, html }) => (
   <Wrapper>

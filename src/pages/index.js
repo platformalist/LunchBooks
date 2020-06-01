@@ -4,13 +4,12 @@ import { useStaticQuery, graphql } from "gatsby"
 import { BookBlock, PageHeader, SEO } from "components"
 
 function IndexPage() {
-  const { file } = useStaticQuery(IMAGE_QUERY)
-  console.log(file)
+  const { cosmicCover, homeHeader } = useStaticQuery(IMAGE_QUERY)
 
   const Library = [
     {
       title: "A Being of Some Cosmic Importance",
-      cover: file.childImageSharp.fixed,
+      cover: cosmicCover.childImageSharp.fixed,
       genre: "Science Fiction",
       buttons: [
         {
@@ -42,6 +41,7 @@ function IndexPage() {
       <PageHeader
         title="James Prower"
         body="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
+        image={homeHeader.childImageSharp.fluid}
       />
 
       {Library.map((book, index) => (
@@ -61,10 +61,17 @@ function IndexPage() {
 
 const IMAGE_QUERY = graphql`
   {
-    file(relativePath: { eq: "ABOSCI_Cover.jpg" }) {
+    cosmicCover: file(relativePath: { eq: "ABOSCI_Cover.jpg" }) {
       childImageSharp {
         fixed(width: 276, height: 412) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    homeHeader: file(relativePath: { eq: "homeHeader.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1280) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
