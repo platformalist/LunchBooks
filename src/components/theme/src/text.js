@@ -1,4 +1,9 @@
 export default {
+  "700": {
+    fontSize: "24px",
+    fontWeight: 400,
+    lineHeight: 1.25,
+  },
   "600": {
     fontSize: "20px",
     fontWeight: 400,

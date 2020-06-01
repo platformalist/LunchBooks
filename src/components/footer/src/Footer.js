@@ -1,16 +1,16 @@
 import React from "react"
-import { Flex, Heading, Vector } from "components"
+import { Flex, Heading, Vector, Wrapper } from "components"
 
-const Footer = ({ data }) => (
-  <Flex
-    flexDirection="column"
-    as="footer"
-    alignItems="center"
-    justifyContent="center"
-  >
-    <Vector selection="Twitter" />
-    <Heading children={data.text} fontWeight={800} size={600} />
-  </Flex>
+const Footer = ({ text }) => (
+  <Wrapper py="layout.6">
+    <Flex as="footer" justifyContent="space-between">
+      <Heading children={text} size={600} />
+      <Flex>
+        <Vector selection="twitter" />
+        <Vector selection="triangle" />
+      </Flex>
+    </Flex>
+  </Wrapper>
 )
 
 export default Footer

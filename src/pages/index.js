@@ -3,48 +3,32 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 
-import { BookBlock, Box, Flex, Library } from "components"
+import { BookBlock, Box, Flex, Library, PageHeader } from "components"
 
 const IndexPage = () => {
-  const { blogs } = useStaticQuery(BLOG_QUERY)
-  console.log(blogs)
   return (
     <>
       <SEO title="Home" />
 
       {/* Books */}
-      <Flex justifyContent="flex-end" width="100%">
-        <Box width="100%">
-          {Library.map((book, index) => (
-            <BookBlock
-              title={book.title}
-              genre={book.genre}
-              cover={book.cover}
-              synopsis={book.synopsis}
-              buttons={book.buttons}
-              index={index}
-              key={"bookBlock" + index}
-            />
-          ))}
-        </Box>
-      </Flex>
-      <div
-        align="justify"
-        className="blog-post-content"
-        dangerouslySetInnerHTML={{ __html: blogs.nodes[0].html }}
+      <PageHeader
+        title="James Prower"
+        body="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
       />
+
+      {Library.map((book, index) => (
+        <BookBlock
+          title={book.title}
+          genre={book.genre}
+          cover={book.cover}
+          synopsis={book.synopsis}
+          buttons={book.buttons}
+          index={index}
+          key={"bookBlock" + index}
+        />
+      ))}
     </>
   )
 }
-
-const BLOG_QUERY = graphql`
-  query MyQuery {
-    blogs: allMarkdownRemark {
-      nodes {
-        html
-      }
-    }
-  }
-`
 
 export default IndexPage

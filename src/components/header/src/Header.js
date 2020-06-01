@@ -1,36 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { Box, Flex, Text, Heading } from "components"
+import { Box, Flex, Text, Vector, Wrapper } from "components"
 import headerImage from "images/header.jpg"
 
-const Header = ({ data }) => {
+const Header = () => {
   return (
-    <Box as="header" width="100%">
-      <Flex justifyContent={["center", "center", "flex-end"]}>
-        <Link to="/">
-          <Heading mb={1} children={data.title} fontWeight={800} size={800} />
-        </Link>
-      </Flex>
-      <Flex justifyContent="flex-end">
-        <Text
-          mb={[6, 6, 8]}
-          textAlign={["center", "center", "right"]}
-          children={data.text}
-        />
-      </Flex>
-      <Box
-        mb={[6, 6, 4]}
-        width="100%"
-        height={["40px", "40px", "80px"]}
-        p={4}
-        display={["none", "none", "block"]}
-        css={{
-          backgroundImage: "url(" + headerImage + ")",
-          backgroundSize: "cover",
-        }}
-      />
-    </Box>
+    // Add a header if we eventually have enough content to use a menu
+    // <Wrapper pt="layout.6">
+    //   <Flex>
+    //     <Text children="Header item 1" size={600} pr="layout.3" />
+    //     <Text children="Header item 2" size={600} pr="layout.3" />
+    //     <Text children="Header item 3" size={600} pr="layout.3" />
+    //   </Flex>
+    // </Wrapper>
+    <></>
   )
 }
 export default Header
