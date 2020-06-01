@@ -1,8 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import { Box, Flex, Text, Vector, Wrapper } from "components"
-import headerImage from "images/header.jpg"
 
 const Header = () => {
   return (

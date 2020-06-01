@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { Wrapper } from "components"
 import { ThemeProvider } from "emotion-theming"
 import Helmet from "react-helmet"
 

@@ -1,7 +1,10 @@
 import React from "react"
+
+import Img from "gatsby-image"
+
 import { Box, Button, Flex, Heading, Text, Wrapper } from "components"
 
-const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
+const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
       <Box width="900px">
@@ -10,7 +13,9 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
 
         {/* Cover */}
         <Flex pt="layout.3">
-          <Box minWidth="276px" height="412px" bg="red" />
+          <Box width="276px" height="412px">
+            <Img fixed={cover} />
+          </Box>
 
           {/* Synopsis and Buttons */}
           <Box pl="layout.3">
