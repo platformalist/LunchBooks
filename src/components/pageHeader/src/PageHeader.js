@@ -24,7 +24,7 @@ const PageHeader = ({ title, body, image }) => (
         <Wrapper>
           <Heading
             children={title}
-            size={900}
+            size={[700, 800, 900]}
             color="background"
             pb="layout.3"
           />

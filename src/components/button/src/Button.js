@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { Box, Heading } from "components"
 
-const Button = ({ link, label }) => {
+const Button = ({ link, label, color }) => {
   const [hover, setHover] = useState(false)
   return (
     <Box
@@ -19,13 +19,7 @@ const Button = ({ link, label }) => {
         target={link.includes("http") ? "_blank" : null}
         rel={link.includes("http") ? "noopener noreferrer" : null}
       >
-        <Heading
-          children={label}
-          css={{
-            color: "text",
-          }}
-          size={500}
-        />
+        <Heading children={label} color={color} size={400} />
       </a>
     </Box>
   )
