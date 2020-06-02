@@ -10,22 +10,21 @@ const Button = ({ link, label }) => {
       onMouseLeave={() => setHover(false)}
       css={{ "&.hovered": { opacity: 0.7 } }}
       className={hover ? "hovered" : ""}
-      width="100px"
     >
       <a
         href={link}
         css={{
           textDecoration: "none",
         }}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={link.includes("http") ? "_blank" : null}
+        rel={link.includes("http") ? "noopener noreferrer" : null}
       >
         <Heading
           children={label}
           css={{
-            color: "#000",
+            color: "text",
           }}
-          size={600}
+          size={500}
         />
       </a>
     </Box>

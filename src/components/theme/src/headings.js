@@ -5,6 +5,7 @@ export default {
     fontFamily: fonts.extended,
     fontSize: "144px",
     fontWeight: "bold",
+    lineHeight: 0.9,
   },
   "800": {
     fontFamily: fonts.extended,
@@ -13,12 +14,17 @@ export default {
   },
   "700": {
     fontFamily: fonts.extended,
-    fontSize: "24px",
+    fontSize: "32px",
     fontWeight: "bold",
   },
   "600": {
     fontFamily: fonts.extended,
     fontSize: "24px",
+    fontWeight: "bold",
+  },
+  "500": {
+    fontFamily: fonts.extended,
+    fontSize: "20px",
     fontWeight: "bold",
   },
 }

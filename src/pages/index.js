@@ -35,7 +35,7 @@ function IndexPage() {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Home | James Prower" />
 
       {/* Books */}
       <PageHeader
@@ -68,7 +68,7 @@ const IMAGE_QUERY = graphql`
         }
       }
     }
-    homeHeader: file(relativePath: { eq: "homeHeader.jpg" }) {
+    homeHeader: file(relativePath: { eq: "homeHeader2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid

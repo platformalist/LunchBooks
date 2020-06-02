@@ -8,9 +8,6 @@ export default {
     fontSize: "20px",
     fontWeight: 400,
     lineHeight: 1.2,
-    "@media screen and (min-width: 40em)": {
-      fontSize: "24px",
-    },
   },
   "500": {
     fontSize: "16px",

@@ -7,10 +7,7 @@ import { Box, Button, Flex, Heading, Text, Wrapper } from "components"
 const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
-      <Box width="900px" pt="layout.3">
-        {/* Title and genre */}
-        <Heading children={title} size={800} />
-
+      <Box width="900px" py="layout.6">
         {/* Cover */}
         <Flex pt="layout.1">
           <Box width="276px" height="412px">
@@ -18,8 +15,10 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
           </Box>
 
           {/* Synopsis and Buttons */}
-          <Box pl="layout.3">
-            <Text children={synopsis} size={700} pb="layout.3" />
+          <Box pl="layout.4">
+            {/* Title and genre */}
+            <Heading children={title} size={700} />
+            <Text children={synopsis} size={600} pb="layout.3" />
             {buttons.map((button, index) => (
               <Button
                 label={button.label}

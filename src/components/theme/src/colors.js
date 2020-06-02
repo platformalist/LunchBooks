@@ -1,7 +1,7 @@
 import { rgba } from "polished"
 
 export default {
-  text: "#000",
+  text: "#222",
   alt: rgba("#444444", 0.5),
   background: "#fff",
   wash: "#f2f2f2",
