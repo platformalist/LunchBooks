@@ -1,9 +1,9 @@
 import { rgba } from "polished"
 
 export default {
-  text: "#252a02",
+  text: "#222",
   alt: rgba("#444444", 0.5),
-  background: "#f5f4f0",
+  background: "#fff",
   wash: "#f2f2f2",
   primary: "#FF4D01",
   secondary: "#132048",

@@ -13,7 +13,7 @@ function Wrapper({ children, maxWidth, px, ...rest }) {
 }
 
 Wrapper.defaultProps = {
-  maxWidth: 1080,
+  maxWidth: 1440,
   px: ["layout.4", "layout.6"],
 }
 

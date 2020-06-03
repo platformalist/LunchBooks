@@ -1,83 +1,35 @@
-import React, { useState } from "react"
-import { Box, Button, Flex, Heading, Text } from "components"
+import React from "react"
 
-const BookBlock = ({ title, genre, cover, synopsis, buttons, index }) => {
-  const [hover, setHover] = useState(false)
+import Img from "gatsby-image"
 
-  let dockColor = index % 2 === 1 ? "#deddd5" : "#e8e7e1"
+import { Box, Button, Flex, Heading, Text, Wrapper } from "components"
 
+const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
-    <Flex>
-      {/* The background holding the whole book. */}
-      <Flex
-        width="100%"
-        mb={[3, 3, 8]}
-        flexWrap={["wrap", "wrap", "nowrap"]}
-        justifyContent={["center", "center", "flex-start"]}
-      >
-        <Box>
-          {/* The actual book cover */}
-          <Box
-            height="300px"
-            width="200px"
-            mb={[4, 4, 0]}
-            css={{
-              backgroundImage: "url(" + cover + ")",
-              backgroundSize: "cover",
-            }}
-          />
-        </Box>
-        <Flex
-          position="relative"
-          p={5}
-          flexDirection="column"
-          justifyContent="center"
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
-        >
-          <Box
-            position="absolute"
-            top={0}
-            left={0}
-            width="100%"
-            height="100%"
-            bg={["background", "background", dockColor]}
-          />
-          <Flex
-            position="relative"
-            flexDirection="column"
-            alignItems={["center", "center", "flex-start"]}
-          >
-            <Heading
-              textAlign={["center", "center", "left"]}
-              children={title}
-              fontWeight={800}
-              size={700}
-            />
-            <Text children={genre} mb={[2, 2, 3]} fontWeight={400} />
-            <Flex
-              flexWrap="wrap"
-              justifyContent={["center", "center", "flex-start"]}
-            >
-              {buttons.map((button, index) => (
-                <Button
-                  link={button.link}
-                  label={button.label}
-                  index={index}
-                  key={"button" + index}
-                />
-              ))}
-            </Flex>
-            <Text
-              children={synopsis}
-              mt={2}
-              textAlign={["center", "center", "left"]}
-              fontWeight={400}
-            />
-          </Flex>
+    <Wrapper>
+      <Box maxWidth="900px" py={["layout.4", "layout.5", "layout.6"]}>
+        <Flex pt="layout.1" flexDirection={["column", "column", "row"]}>
+          {/* Cover */}
+          <Box width="276px" height="412px" m="auto">
+            <Img fixed={cover} />
+          </Box>
+
+          {/* Title and genre */}
+          <Box pl={[0, 0, "layout.4"]} pt={["layout.3", "layout.3", 0]}>
+            <Heading children={title} size={600} />
+            <Text children={synopsis} size={[500, 600, 600]} py="layout.3" />
+            {buttons.map((button, index) => (
+              <Button
+                label={button.label}
+                link={button.link}
+                color="text"
+                key={"bookButton" + index}
+              />
+            ))}
+          </Box>
         </Flex>
-      </Flex>
-    </Flex>
+      </Box>
+    </Wrapper>
   )
 }
 
