@@ -13,15 +13,23 @@ export default {
     fontWeight: "bold",
     lineHeight: 0.9,
   },
+  "750": {
+    fontFamily: fonts.extended,
+    fontSize: "72px",
+    fontWeight: "bold",
+    lineHeight: 0.9,
+  },
   "700": {
     fontFamily: fonts.extended,
     fontSize: "48px",
     fontWeight: "bold",
+    lineHeight: 0.9,
   },
   "600": {
     fontFamily: fonts.extended,
     fontSize: "32px",
     fontWeight: "bold",
+    lineHeight: 0.95,
   },
   "500": {
     fontFamily: fonts.extended,

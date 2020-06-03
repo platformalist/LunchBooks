@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header />
       <main>{children}</main>
-      <Footer text={"" + finalString + "James Prower. All Rights Reserved."} />
+      <Footer text={"" + finalString + "James Prower"} />
     </ThemeProvider>
   )
 }

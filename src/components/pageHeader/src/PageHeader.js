@@ -6,7 +6,12 @@ import { Box, Heading, Text, Wrapper } from "components"
 
 const PageHeader = ({ title, body, image }) => (
   <>
-    <Box position="relative" width="100%" py="128px" color="red">
+    <Box
+      position="relative"
+      width="100vw"
+      py={["72px", "96px", "128px"]}
+      color="red"
+    >
       {image && (
         <Img
           fluid={image}
@@ -22,14 +27,13 @@ const PageHeader = ({ title, body, image }) => (
       )}
       <Box position="relative">
         <Wrapper>
-          <Heading
-            children={title}
-            size={[700, 800, 900]}
-            color="background"
-            pb="layout.3"
+          <Heading children={title} size={[750, 800, 900]} color="background" />
+          <Box
+            height={["7px", "13px", "20px"]}
+            bg="background"
+            my={["layout.2", "layout.3", "layout.4"]}
           />
-          <Box height="20px" width="100%" bg="background" />
-          <Text children={body} size={600} pt="layout.4" color="background" />
+          <Text children={body} size={[500, 600, 600]} color="background" />
         </Wrapper>
       </Box>
     </Box>
