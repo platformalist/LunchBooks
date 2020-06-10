@@ -29,7 +29,7 @@ const PageHeader = ({ title, body, image }) => (
         <Wrapper>
           <Heading children={title} size={[750, 800, 900]} color="background" />
           <Box
-            height={["7px", "13px", "20px"]}
+            height={["10px", "13px", "20px"]}
             bg="background"
             my={["layout.2", "layout.3", "layout.4"]}
           />
