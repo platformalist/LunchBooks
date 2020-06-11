@@ -1,22 +1,23 @@
 import React from "react"
 
+import css from "@styled-system/css"
+
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Box, Heading, PageHeader, SEO, Wrapper } from "components"
+import { Box, Heading, PageHeader, RichText, SEO, Wrapper } from "components"
 
 const BlogPost = ({ title, date, html }) => (
   <Wrapper>
-    <Box width="900px" py="layout.6">
-      <Heading children={title} size={800} color="text" />
-      <Heading children={date} size={400} color="text" />
-      <div
-        style={{
-          color: "#222",
-          fontSize: "20px",
-          fontFamily: "Inter, system-ui, sans-serif",
-        }}
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
+    <Heading
+      children={title}
+      size={[700, 750, 800]}
+      color="text"
+      pb="layout.2"
+      pt="layout.6"
+    />
+    <Box maxWidth="900px" pb="layout.6">
+      {/* <Heading children={date} size={[200, 300, 400]} color="text" /> */}
+      <RichText size={[500, 400, 300]} content={{ html: html }} />
     </Box>
   </Wrapper>
 )
@@ -47,7 +48,9 @@ const BlogPage = () => {
 
 const POST_QUERY = graphql`
   {
-    blogPosts: allMarkdownRemark {
+    blogPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
       nodes {
         frontmatter {
           date

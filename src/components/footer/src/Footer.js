@@ -5,12 +5,23 @@ const Footer = ({ text }) => (
   <Wrapper pb="layout.6">
     <Flex justifyContent="space-between">
       <Heading children={text} size={[300, 400, 400]} color="text" />
-      <Button
-        label="Twitter"
-        link="https://twitter.com/ProwerJames"
-        color="text"
-        size={[300, 400, 400]}
-      />
+      <Flex>
+        <Button
+          label="Home"
+          link="/"
+          color="text"
+          size={[300, 400, 400]}
+          pr={["layout.2", "layout.3", "layout.4"]}
+        />
+        <Button
+          label="Twitter"
+          link="https://twitter.com/ProwerJames"
+          color="text"
+          size={[300, 400, 400]}
+          pr={["layout.2", "layout.3", "layout.4"]}
+        />
+        <Button label="Blog" link="/blog" color="text" size={[300, 400, 400]} />
+      </Flex>
     </Flex>
   </Wrapper>
 )

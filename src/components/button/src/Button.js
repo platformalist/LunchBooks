@@ -2,11 +2,11 @@ import React, { useState } from "react"
 
 import { Box, Heading } from "components"
 
-function Button({ link, label, color, size }) {
+function Button({ link, label, color, size, pr }) {
   const [hover, setHover] = useState(false)
   return (
     // Wrapper box to keep button's clickable area from overflowing into container.
-    <Box maxWidth="100px">
+    <Box maxWidth="100px" pr={pr}>
       <a
         href={link}
         css={{
