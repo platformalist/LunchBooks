@@ -1,4 +1,5 @@
 import React from "react"
+
 import { Button, Flex, Heading, Wrapper } from "components"
 
 const Footer = ({ text }) => (
@@ -6,13 +7,6 @@ const Footer = ({ text }) => (
     <Flex justifyContent="space-between">
       <Heading children={text} size={[300, 400, 400]} color="text" />
       <Flex>
-        <Button
-          label="Home"
-          link="/"
-          color="text"
-          size={[300, 400, 400]}
-          pr={["layout.2", "layout.3", "layout.4"]}
-        />
         <Button
           label="Twitter"
           link="https://twitter.com/ProwerJames"

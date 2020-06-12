@@ -1,11 +1,12 @@
 import React from "react"
 
 import Img from "gatsby-image/withIEPolyfill"
+import { Link } from "gatsby"
 
 import { Box, Heading, Text, Wrapper } from "components"
 
 const PageHeader = ({ title, body, image }) => (
-  <>
+  <Link to="/">
     <Box
       position="relative"
       width="100vw"
@@ -37,7 +38,7 @@ const PageHeader = ({ title, body, image }) => (
         </Wrapper>
       </Box>
     </Box>
-  </>
+  </Link>
 )
 
 export default PageHeader
