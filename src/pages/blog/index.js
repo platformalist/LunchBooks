@@ -10,12 +10,12 @@ const BlogPost = ({ title, date, html }) => (
   <Wrapper>
     <Heading
       children={title}
-      size={[700, 750, 800]}
+      size={[600, 700, 750]}
       color="text"
       pb="layout.2"
       pt="layout.6"
     />
-    <Box maxWidth="900px" pb="layout.6">
+    <Box maxWidth="600px" pb="layout.6">
       {/* <Heading children={date} size={[200, 300, 400]} color="text" /> */}
       <RichText size={[500, 400, 300]} content={{ html: html }} />
     </Box>
