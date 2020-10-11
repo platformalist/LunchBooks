@@ -66,7 +66,7 @@ function SEO({ description, imageAlt, imageOpenGraph, lang, meta, title }) {
         },
         {
           name: "twitter:site",
-          content: `@prowerjames`,
+          content: `@ProwerJames`,
         },
         {
           name: "twitter:title",
