@@ -62,7 +62,7 @@ const POST_QUERY = graphql`
         html
       }
     }
-    homeHeader: file(relativePath: { eq: "homeHeader2.jpg" }) {
+    homeHeader: file(relativePath: { eq: "homeHeader4.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid
