@@ -23,15 +23,15 @@ const BlogPost = ({ title, date, html }) => (
 )
 
 const BlogPage = () => {
-  const { blogPosts, homeHeader } = useStaticQuery(POST_QUERY)
+  const { blogPosts, homeHeader, opengraph } = useStaticQuery(POST_QUERY)
 
   return (
     <>
       <SEO
         title="Blog | James Prower"
         description="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter."
-        imageOpenGraph="images/opengraph.jpg"
-        imageTwitter="images/opengraph.jpg"
+        imageOpenGraph={opengraph.publicURL}
+        imageTwitter={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
       <Box>
@@ -69,6 +69,14 @@ const POST_QUERY = graphql`
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    opengraph: file(relativePath: { eq: "opengraph.jpg" }) {
+      publicURL
+      childImageSharp {
+        fixed(width: 1200, height: 627) {
+          ...GatsbyImageSharpFixed
         }
       }
     }

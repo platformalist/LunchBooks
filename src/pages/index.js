@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { BookBlock, PageHeader, SEO } from "components"
 
 function IndexPage() {
-  const { cosmicCover, homeHeader } = useStaticQuery(IMAGE_QUERY)
+  const { cosmicCover, homeHeader, opengraph } = useStaticQuery(IMAGE_QUERY)
 
   const Library = [
     {
@@ -38,8 +38,8 @@ function IndexPage() {
       <SEO
         title="Home"
         description="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter."
-        imageOpenGraph="images/opengraph.jpg"
-        imageTwitter="images/opengraph.jpg"
+        imageOpenGraph={opengraph.publicURL}
+        imageTwitter={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
 
@@ -78,6 +78,14 @@ const IMAGE_QUERY = graphql`
       childImageSharp {
         fluid(maxWidth: 1280) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    opengraph: file(relativePath: { eq: "opengraph.jpg" }) {
+      publicURL
+      childImageSharp {
+        fixed(width: 1200, height: 627) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
