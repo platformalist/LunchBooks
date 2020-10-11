@@ -29,12 +29,17 @@ const PageHeader = ({ title, body, image }) => (
       <Box position="relative">
         <Wrapper>
           <Heading children={title} size={[750, 800, 900]} color="background" />
-          <Box
-            height={["10px", "13px", "20px"]}
+          {/* <Box
+            height={["8px", "10px", "16px"]}
             bg="background"
             my={["layout.2", "layout.3", "layout.4"]}
-          />
-          <Text children={body} size={[500, 600, 600]} color="background" />
+          /> */}
+          <Box
+            width={[1 / 1, 1 / 1, 1 / 1, 2 / 3]}
+            pt={["layout.2", "layout.3", "layout.4"]}
+          >
+            <Text children={body} size={600} color="background" />
+          </Box>
         </Wrapper>
       </Box>
     </Box>

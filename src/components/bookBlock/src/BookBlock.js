@@ -17,13 +17,13 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
           {/* Title and genre */}
           <Box pl={[0, 0, "layout.4"]} pt={["layout.3", "layout.3", 0]}>
             <Heading children={title} size={600} />
-            <Text children={synopsis} size={[500, 600, 600]} py="layout.3" />
+            <Text children={synopsis} size={600} py="layout.3" />
             {buttons.map((button, index) => (
               <Button
                 label={button.label}
                 link={button.link}
                 color="text"
-                size={400}
+                size={350}
                 key={"bookButton" + index}
               />
             ))}

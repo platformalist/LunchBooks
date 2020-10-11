@@ -2,19 +2,19 @@ import fonts from "./fonts"
 
 export default {
   "900": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "144px",
     fontWeight: "bold",
     lineHeight: 0.9,
   },
   "800": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "96px",
     fontWeight: "bold",
     lineHeight: 0.9,
   },
   "750": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "72px",
     fontWeight: "bold",
     lineHeight: 0.9,
@@ -26,7 +26,7 @@ export default {
     lineHeight: 0.9,
   },
   "600": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "32px",
     fontWeight: "bold",
     lineHeight: 0.95,
@@ -37,6 +37,11 @@ export default {
     fontWeight: "bold",
   },
   "400": {
+    fontFamily: fonts.title,
+    fontSize: "20px",
+    fontWeight: "bold",
+  },
+  "350": {
     fontFamily: fonts.extended,
     fontSize: "20px",
     fontWeight: "bold",

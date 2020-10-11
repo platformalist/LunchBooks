@@ -46,3 +46,22 @@
   font-weight: 900;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Eaves";
+  src: url("/fonts/MrsEavesOT-RomanLining.otf");
+  /* font-weight: 800; */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Mops";
+  src: url("/fonts/Mops.otf");
+  /* font-weight: 800; */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neuton";
+  src: url("/fonts/Neuton.ttf");
+  /* font-weight: 800; */
+  font-style: normal;
+}
