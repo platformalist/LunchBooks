@@ -35,7 +35,13 @@ function IndexPage() {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter."
+        imageOpenGraph="images/opengraph.jpg"
+        imageTwitter="images/opengraph.jpg"
+        imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
+      />
 
       {/* Books */}
       <PageHeader
