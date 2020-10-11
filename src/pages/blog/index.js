@@ -27,7 +27,7 @@ const BlogPage = () => {
     <>
       <SEO
         title="Blog"
-        description="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter."
+        description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
@@ -62,9 +62,9 @@ const POST_QUERY = graphql`
         html
       }
     }
-    homeHeader: file(relativePath: { eq: "homeHeader4.jpg" }) {
+    homeHeader: file(relativePath: { eq: "homeHeader2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1600) {
+        fluid(maxWidth: 1280, quality: 95) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -10,7 +10,7 @@ const PageHeader = ({ title, body, image }) => (
     <Box
       position="relative"
       width="100vw"
-      py={["72px", "96px", "128px"]}
+      py={["32px", "48px", "56px"]}
       color="red"
     >
       {image && (
@@ -28,21 +28,23 @@ const PageHeader = ({ title, body, image }) => (
       )}
       <Box position="relative">
         <Wrapper>
-          <Heading children={title} size={[750, 800, 900]} color="background" />
-          {/* <Box
-            height={["8px", "10px", "16px"]}
-            bg="background"
-            my={["layout.2", "layout.3", "layout.4"]}
-          /> */}
-          <Box
-            width={[1 / 1, 1 / 1, 1 / 1, 2 / 3]}
-            pt={["layout.2", "layout.3", "layout.4"]}
-          >
-            <Text children={body} size={600} color="background" />
-          </Box>
+          <Heading
+            children={title}
+            size={[750, 800, 900]}
+            color="background"
+            textAlign={["right", "left"]}
+          />
         </Wrapper>
       </Box>
     </Box>
+    <Wrapper>
+      <Box
+        width={[1 / 1, 1 / 1, 1 / 1, 2 / 3]}
+        py={["layout.2", "layout.3", "layout.4"]}
+      >
+        <Text children={body} size={600} color="text" />
+      </Box>
+    </Wrapper>
   </Link>
 )
 

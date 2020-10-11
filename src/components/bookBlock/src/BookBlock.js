@@ -7,7 +7,7 @@ import { Box, Button, Flex, Heading, Text, Wrapper } from "components"
 const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
-      <Box maxWidth="900px" py={["layout.4", "layout.5", "layout.6"]}>
+      <Box maxWidth="900px">
         <Flex pt="layout.1" flexDirection={["column", "column", "row"]}>
           {/* Cover */}
           <Box width="276px" height="412px" m="auto">

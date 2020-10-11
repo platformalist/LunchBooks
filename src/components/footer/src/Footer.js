@@ -3,7 +3,7 @@ import React from "react"
 import { Button, Flex, Heading, Wrapper } from "components"
 
 const Footer = ({ text }) => (
-  <Wrapper pb="layout.6">
+  <Wrapper py="layout.5">
     <Flex justifyContent="space-between">
       <Heading children={text} size={400} color="text" />
       <Flex>
