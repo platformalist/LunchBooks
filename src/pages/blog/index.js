@@ -28,7 +28,7 @@ const BlogPage = () => {
   return (
     <>
       <SEO
-        title="Blog | James Prower"
+        title="Blog"
         description="The author of 'A Being of Some Cosmic Importance'. James writes Science Fiction and Fantasy novels, and lives in Calgary, Alberta with his wife and daughter."
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
