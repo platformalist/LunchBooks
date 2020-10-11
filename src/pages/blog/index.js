@@ -1,7 +1,5 @@
 import React from "react"
 
-import css from "@styled-system/css"
-
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Box, Heading, PageHeader, RichText, SEO, Wrapper } from "components"
