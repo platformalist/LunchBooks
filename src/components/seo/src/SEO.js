@@ -64,8 +64,12 @@ function SEO({
           content: `website`,
         },
         {
-          name: `twitter:card`,
+          name: `twitter:image`,
           content: imageTwitter ? imageTwitter : `summary`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
         },
         {
           name: `twitter:creator`,
