@@ -78,7 +78,7 @@ function SEO({ description, imageAlt, imageOpenGraph, lang, meta, title }) {
         },
         {
           name: "twitter:image",
-          content: imageOpenGraph,
+          content: "https://www.jamesprower.com" + imageOpenGraph,
         },
         {
           name: "twitter:image:alt",
