@@ -15,12 +15,9 @@ export default {
   },
   "500": {
     fontFamily: fonts.regular,
-    fontSize: "18px",
+    fontSize: "16px",
     fontWeight: 400,
     lineHeight: 1.25,
-    "@media screen and (min-width: 40em)": {
-      fontSize: "18px",
-    },
   },
   "400": {
     fontFamily: fonts.regular,

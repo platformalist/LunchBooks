@@ -43,7 +43,7 @@ export default {
   },
   "350": {
     fontFamily: fonts.extended,
-    fontSize: "20px",
+    fontSize: "18px",
     fontWeight: "bold",
   },
   "300": {
