@@ -23,7 +23,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
                 label={button.label}
                 link={button.link}
                 color="text"
-                size={350}
+                size={300}
                 key={"bookButton" + index}
               />
             ))}
