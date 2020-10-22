@@ -73,9 +73,9 @@ const IMAGE_QUERY = graphql`
         }
       }
     }
-    homeHeader: file(relativePath: { eq: "homeHeader5.jpg" }) {
+    homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1280, quality: 95) {
+        fluid(maxWidth: 1600, quality: 95) {
           ...GatsbyImageSharpFluid
         }
       }
