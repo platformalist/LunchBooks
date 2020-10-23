@@ -68,14 +68,14 @@ const IMAGE_QUERY = graphql`
   {
     cosmicCover: file(relativePath: { eq: "ABOSCI_Cover.jpg" }) {
       childImageSharp {
-        fixed(width: 276, height: 412, quality: 95) {
+        fixed(width: 276, height: 412, quality: 90) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1600, quality: 95) {
+        fluid(maxWidth: 1200, quality: 90) {
           ...GatsbyImageSharpFluid
         }
       }
