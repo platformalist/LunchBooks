@@ -55,6 +55,13 @@
 }
 
 @font-face {
+  font-family: "Goudy Bookletter";
+  src: url("/fonts/GoudyBookletter1911.otf");
+  /* font-weight: 800; */
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Averia Regular";
   src: url("/fonts/AveriaSerif-Regular.ttf");
   /* font-weight: 800; */

@@ -47,7 +47,7 @@ export default {
     fontWeight: "bold",
   },
   "300": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "18px",
     fontWeight: "bold",
   },
