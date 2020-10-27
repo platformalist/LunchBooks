@@ -15,7 +15,7 @@ const BlogPost = ({ title, date, html }) => (
     />
     <Box maxWidth="600px" pb="layout.6">
       {/* <Heading children={date} size={[200, 300, 400]} color="text" /> */}
-      <RichText size={[500, 400, 300]} content={{ html: html }} />
+      <RichText content={{ html: html }} />
     </Box>
   </Wrapper>
 )

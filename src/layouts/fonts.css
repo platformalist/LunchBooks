@@ -48,11 +48,33 @@
 }
 
 @font-face {
+  font-family: "Day Roman";
+  src: url("/fonts/DAYROM__.ttf");
+  /* font-weight: 200; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Averia Regular";
+  src: url("/fonts/AveriaSerif-Regular.ttf");
+  /* font-weight: 800; */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chanticlear";
+  src: url("/fonts/CHANTICL.TTF");
+  /* font-weight: 800; */
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Eaves";
   src: url("/fonts/MrsEavesOT-RomanLining.otf");
   /* font-weight: 800; */
   font-style: normal;
 }
+
 @font-face {
   font-family: "Mops";
   src: url("/fonts/Mops.otf");
