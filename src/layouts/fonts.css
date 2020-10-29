@@ -1,4 +1,10 @@
 @font-face {
+  font-family: "Atkinson-Hyperlegible";
+  src: url("/fonts/Atkinson-Hyperlegible-Regular-102.ttf");
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Light.otf");
   font-weight: 300;

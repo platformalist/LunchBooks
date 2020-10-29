@@ -42,7 +42,7 @@ const PageHeader = ({ title, body, image }) => (
         width={[1 / 1, 1 / 1, 1 / 1, 2 / 3]}
         py={["layout.2", "layout.3", "layout.4"]}
       >
-        <Text children={body} size={500} color="text" />
+        <Text children={body} size={400} color="text" />
       </Box>
     </Wrapper>
   </Link>

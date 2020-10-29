@@ -62,7 +62,7 @@ const RichText = ({ content, ...rest }) => (
 )
 
 RichText.defaultProps = {
-  size: "500",
+  size: "400",
   color: "text",
 }
 

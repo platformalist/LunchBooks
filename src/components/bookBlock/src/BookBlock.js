@@ -17,7 +17,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
           {/* Title and genre */}
           <Box pl={[0, 0, "layout.4"]} pt={["layout.3", "layout.3", 0]}>
             <Heading children={title} size={600} />
-            <Text children={synopsis} size={500} py="layout.3" />
+            <Text children={synopsis} size={400} py="layout.3" />
             {buttons.map((button, index) => (
               <Button
                 label={button.label}
