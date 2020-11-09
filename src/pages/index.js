@@ -45,7 +45,7 @@ function IndexPage() {
       {/* Books */}
       <PageHeader
         title="James Prower"
-        body="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
+        body="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions to inquiries@jamesprower.com."
         image={homeHeader.childImageSharp.fluid}
       />
 
