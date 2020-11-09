@@ -38,7 +38,7 @@ function IndexPage() {
       <SEO
         title="Home"
         description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
-        imageOpenGraph={pengraph.publicURL}
+        imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
 
