@@ -1,5 +1,7 @@
 import React from "react"
 
+import { useStaticQuery, graphql } from "gatsby"
+
 import { Heading, SEO, Text, Wrapper } from "components"
 
 const NotFoundPage = () => {
