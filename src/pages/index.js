@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { BookBlock, PageHeader, SEO } from "components"
+import { BookBlock, PageHeader, SEO, Text } from "components"
 
 function IndexPage() {
   const { cosmicCover, homeHeader, opengraph } = useStaticQuery(IMAGE_QUERY)
@@ -45,8 +45,17 @@ function IndexPage() {
       {/* Books */}
       <PageHeader
         title="James Prower"
-        body="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions to inquiries@jamesprower.com."
         image={homeHeader.childImageSharp.fluid}
+        body={
+          <Text size={400} color="text">
+            Science fiction author, dreaming of parallel universes. Send any
+            questions to{" "}
+            <a href="mailto:inquiries@jamesprower.com">
+              inquiries@jamesprower.com
+            </a>
+            .
+          </Text>
+        }
       />
 
       {Library.map((book, index) => (
