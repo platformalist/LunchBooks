@@ -1,8 +1,8 @@
 # To-Do
 
-Unlock twitter logo in Footer component when JP has over 50 followers on Twitter.
-Get inspiration from more professional sites and rebuild at least a basic book component.
-Look into adjusting fonts to something a little more professional.
-Write a beefier bio, and create a bit of mystique! :P
+Let's get our SEO in a better place. More pages in general, more image content and alt text. The dream is for the site to be the top item in a google search for James Prower, without writing 'author' or 'books' or anything.
 
-Build a writing section - so I can dump writing prompts into Markdown documents and have them spawn repeatable pages with sharing links, etc.
+Create a Bio page, or About the Author, or something like that. Do a photo.
+Add optional images for Blog page.
+Rename Blog as Scribblings. or something more charming. And have it split off into separate pages if there are 10 or more posts on a page.
+Investigate other author pages and see what small stuff we can borrow.
