@@ -1,7 +1,8 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { BookBlock, PageHeader, SEO, Text } from "components"
+import { SEO, Text } from "components"
+import { BookBlock, PageHeader } from "views"
 
 function IndexPage() {
   const { cosmicCover, homeHeader, opengraph } = useStaticQuery(IMAGE_QUERY)

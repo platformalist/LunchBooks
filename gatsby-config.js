@@ -45,6 +45,7 @@ module.exports = {
           layouts: "./layouts",
           pages: "./pages",
           templates: "./templates",
+          views: "./views",
         },
       },
     },
