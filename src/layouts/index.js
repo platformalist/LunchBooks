@@ -8,15 +8,7 @@ import { Footer, GlobalStyles, Header, Theme } from "components"
 
 import "./fonts.css"
 
-const today = new Date()
-
 const Layout = ({ children }) => {
-  // Check the year. If 2020, just write (c) 2020 PEN NAME.
-  // If not, write (c) 2020-202X PEN NAME.
-  let thisYear = today.getFullYear()
-  let finalString =
-    thisYear === 2020 ? "© " + thisYear + " " : "© 2020-" + thisYear + " "
-
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
@@ -27,7 +19,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header />
       <main>{children}</main>
-      <Footer text={"" + finalString + "James Prower"} />
+      <Footer />
     </ThemeProvider>
   )
 }

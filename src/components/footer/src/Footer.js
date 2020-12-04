@@ -1,28 +1,21 @@
 import React from "react"
 
-import { Button, Flex, Heading, Inline, Wrapper } from "components"
+import { Heading, Wrapper } from "components"
 
-const Footer = ({ text }) => (
-  <Wrapper py="layout.5">
-    <Flex justifyContent="space-between">
-      <Heading children={text} size={[350, 350, 400]} color="text" />
-      <Inline space="layout.3">
-        <Button
-          label="About"
-          link="/about"
-          color="text"
-          size={[350, 350, 400]}
-        />
-        <Button label="Blog" link="/blog" color="text" size={[350, 350, 400]} />
-        <Button
-          label="Twitter"
-          link="https://twitter.com/ProwerJames"
-          color="text"
-          size={[350, 350, 400]}
-        />
-      </Inline>
-    </Flex>
-  </Wrapper>
-)
+const Footer = ({ text }) => {
+  const today = new Date()
+  let thisYear = today.getFullYear()
+  let finalString =
+    thisYear === 2020 ? "© " + thisYear + " " : "© 2020-" + thisYear + " "
+  return (
+    <Wrapper py="layout.5">
+      <Heading
+        children={finalString + "James Prower"}
+        size={[350, 350, 400]}
+        color="text"
+      />
+    </Wrapper>
+  )
+}
 
 export default Footer

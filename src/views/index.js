@@ -1,3 +1,4 @@
 export { Biography } from "./biography"
-export { BookBlock } from "./bookBlock"
+export { Library } from "./library"
+export { NavBar } from "./navBar"
 export { PageHeader } from "./pageHeader"

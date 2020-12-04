@@ -1,13 +1,13 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { SEO, Text } from "components"
-import { BookBlock, PageHeader } from "views"
+import { SEO } from "components"
+import { Library, PageHeader } from "views"
 
 function IndexPage() {
   const { cosmicCover, homeHeader, opengraph } = useStaticQuery(IMAGE_QUERY)
 
-  const Library = [
+  const BookList = [
     {
       title: "A Being of Some Cosmic Importance",
       cover: cosmicCover.childImageSharp.fixed,
@@ -47,29 +47,21 @@ function IndexPage() {
       <PageHeader
         title="James Prower"
         image={homeHeader.childImageSharp.fluid}
-        body={
-          <Text size={400} color="text">
-            Science fiction author, dreaming of parallel universes. Send any
-            questions to{" "}
-            <a href="mailto:inquiries@jamesprower.com">
-              inquiries@jamesprower.com
-            </a>
-            .
-          </Text>
-        }
       />
 
-      {Library.map((book, index) => (
-        <BookBlock
-          title={book.title}
-          genre={book.genre}
-          cover={book.cover}
-          synopsis={book.synopsis}
-          buttons={book.buttons}
-          index={index}
-          key={"bookBlock" + index}
-        />
-      ))}
+      {BookList &&
+        BookList[0] &&
+        BookList.map((book, index) => (
+          <Library
+            title={book.title}
+            genre={book.genre}
+            cover={book.cover}
+            synopsis={book.synopsis}
+            buttons={book.buttons}
+            index={index}
+            key={"bookBlock" + index}
+          />
+        ))}
     </>
   )
 }
