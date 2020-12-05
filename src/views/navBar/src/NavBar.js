@@ -2,13 +2,14 @@ import React from "react"
 
 import { Button, Inline, Wrapper } from "components"
 
-function NavItem({ label, link }) {
-  let URL = window.location.href
-  let LAST_SLASH = URL.lastIndexOf("/")
-  let PAGE_NAME = URL.substring(LAST_SLASH, URL.length)
+function NavItem({ label, link, href }) {
+  let PAGE_NAME = href.substring(href.lastIndexOf("/"), href.length)
 
   let UNDERLINE = PAGE_NAME === link ? true : false
 
+  console.log(PAGE_NAME)
+  console.log(link)
+  //
   if (label && link)
     return (
       <Button
@@ -22,14 +23,18 @@ function NavItem({ label, link }) {
   else return null
 }
 
-function NavBar() {
+function NavBar({ location }) {
   return (
     <Wrapper py="layout.2" mb="layout.6" bg="background">
       <Inline space="layout.3">
-        <NavItem label="Home" link="/" />
-        <NavItem label="About" link="/about" />
-        <NavItem label="Blog" link="/blog" />
-        <NavItem label="Twitter" link="https://twitter.com/ProwerJames" />
+        <NavItem label="Home" link="/" href={location.href} />
+        <NavItem label="About" link="/about" href={location.href} />
+        <NavItem label="Blog" link="/blog" href={location.href} />
+        <NavItem
+          label="Twitter"
+          link="https://twitter.com/ProwerJames"
+          href={location.href}
+        />
       </Inline>
     </Wrapper>
   )

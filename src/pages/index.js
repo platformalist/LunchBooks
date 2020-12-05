@@ -2,10 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { SEO } from "components"
-import { Library, PageHeader } from "views"
+import { Library } from "views"
 
 function IndexPage() {
-  const { cosmicCover, homeHeader, opengraph } = useStaticQuery(IMAGE_QUERY)
+  const { cosmicCover, opengraph } = useStaticQuery(IMAGE_QUERY)
 
   const BookList = [
     {
@@ -29,8 +29,29 @@ function IndexPage() {
             "https://www.barnesandnoble.com/w/a-being-of-some-cosmic-importance-james-prower/1136402791?ean=2940162769965",
         },
       ],
-      synopsis:
-        "An engaging vision of futuristic prisons, space travel and Martian politics. The first entry in its broader mythos, ‘A Being of Some Cosmic Importance’ establishes Prower's dystopian universe. How much power do we really have to sway the vast forces that shape us? And if we choose to use our power, are we ready to face the consequences?",
+      synopsis: (
+        <>
+          Under the Kleane administration, every major city in the country is
+          outfitted with a Hive, a mass-incarceration facility with cells no
+          bigger than a coffin. The president's next big idea? Project Second
+          Life, a plan to ship prisoners off-planet to Martian colonies. He
+          claims that the scheme will save taxpayer dollars and permanently
+          relieve the eyesore of the Hives from everyday life.
+          <br />
+          <br />
+          But to Martian Citizen 89, the project comes at the cost of human
+          life, dignity, and safety. Visions of space travel, futuristic
+          prisons, and portals abound in the story of 89 and his struggle to
+          survive in Kleane's Martian colony.
+          <br />
+          <br />
+          The first entry in its broader mythos,{" "}
+          <i>A Being of Some Cosmic Importance</i> establishes Prower's
+          dystopian universe. How much power do we really have to sway the vast
+          forces that shape us? And if we choose to use our power, are we ready
+          to face the consequences?
+        </>
+      ),
     },
   ]
 
@@ -41,12 +62,6 @@ function IndexPage() {
         description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
-      />
-
-      {/* Books */}
-      <PageHeader
-        title="James Prower"
-        image={homeHeader.childImageSharp.fluid}
       />
 
       {BookList &&
@@ -72,13 +87,6 @@ const IMAGE_QUERY = graphql`
       childImageSharp {
         fixed(width: 276, height: 412, quality: 85) {
           ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
         }
       }
     }

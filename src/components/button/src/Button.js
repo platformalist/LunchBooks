@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { Box, Heading } from "components"
 
-function Button({ link, label, color, size, pr, underline }) {
+function Button({ link, label, pr, underline }) {
   const [hover, setHover] = useState(false)
   return (
     // Wrapper box to keep button's clickable area from overflowing into container.
@@ -17,8 +17,8 @@ function Button({ link, label, color, size, pr, underline }) {
       >
         <Heading
           children={label}
-          color={color}
-          size={size}
+          color="text"
+          size={400}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           css={{

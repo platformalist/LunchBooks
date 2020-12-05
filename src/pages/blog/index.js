@@ -3,7 +3,6 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Box, Heading, RichText, SEO, VStack, Wrapper } from "components"
-import { PageHeader } from "views"
 
 const BlogPost = ({ title, html }) => (
   <Wrapper>
@@ -17,7 +16,7 @@ const BlogPost = ({ title, html }) => (
 )
 
 const BlogPage = () => {
-  const { blogPosts, homeHeader, opengraph } = useStaticQuery(POST_QUERY)
+  const { blogPosts, opengraph } = useStaticQuery(POST_QUERY)
 
   return (
     <>
@@ -27,23 +26,17 @@ const BlogPage = () => {
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
-      <Box>
-        <PageHeader
-          title="Blog"
-          body=""
-          image={homeHeader.childImageSharp.fluid}
-        />
-        <VStack space="layout.8">
-          {blogPosts.nodes.map((post, index) => (
-            <BlogPost
-              title={post.frontmatter.title}
-              date={post.frontmatter.date}
-              html={post.html}
-              key={"blogPost" + index}
-            />
-          ))}
-        </VStack>
-      </Box>
+
+      <VStack space="layout.8">
+        {blogPosts.nodes.map((post, index) => (
+          <BlogPost
+            title={post.frontmatter.title}
+            date={post.frontmatter.date}
+            html={post.html}
+            key={"blogPost" + index}
+          />
+        ))}
+      </VStack>
     </>
   )
 }
@@ -59,13 +52,6 @@ const POST_QUERY = graphql`
           title
         }
         html
-      }
-    }
-    homeHeader: file(relativePath: { eq: "hero_drabbles.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
       }
     }
     opengraph: file(relativePath: { eq: "opengraph.jpg" }) {

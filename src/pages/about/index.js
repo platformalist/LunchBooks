@@ -2,10 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { SEO } from "components"
-import { Biography, PageHeader } from "views"
+import { Biography } from "views"
 
 function AboutPage() {
-  const { aboutHeader, aboutHeadshot, opengraph } = useStaticQuery(IMAGE_QUERY)
+  const { opengraph } = useStaticQuery(IMAGE_QUERY)
 
   return (
     <>
@@ -16,28 +16,13 @@ function AboutPage() {
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
 
-      <PageHeader title="About" image={aboutHeader.childImageSharp.fluid} />
-      <Biography image={aboutHeadshot} />
+      <Biography />
     </>
   )
 }
 
 const IMAGE_QUERY = graphql`
   {
-    aboutHeader: file(relativePath: { eq: "hero_about.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    aboutHeadshot: file(relativePath: { eq: "headshot_about.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
     opengraph: file(relativePath: { eq: "opengraph.jpg" }) {
       publicURL
       childImageSharp {

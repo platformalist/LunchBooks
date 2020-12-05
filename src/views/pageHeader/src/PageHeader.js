@@ -3,7 +3,6 @@ import React from "react"
 import Img from "gatsby-image/withIEPolyfill"
 
 import { Box, Heading, Wrapper } from "components"
-import { NavBar } from "views"
 
 const PageHeader = ({ title, image }) => (
   <>
@@ -37,10 +36,6 @@ const PageHeader = ({ title, image }) => (
         </Wrapper>
       </Box>
     </Box>
-
-    {/* Navigation Bar */}
-
-    <NavBar />
   </>
 )
 

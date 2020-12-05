@@ -8,7 +8,7 @@ import { Box, Footer, GlobalStyles, Header, Theme } from "components"
 
 import "./fonts.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   useEffect(() => {
     // Set static viewport height unit on resize and on load
     let vh = window.innerHeight * 0.01
@@ -24,7 +24,8 @@ const Layout = ({ children }) => {
 
       <GlobalStyles />
       <Box display="flex" flexDirection="column" minHeight="100vh">
-        <Header />
+        <Header location={location} />
+
         <main>{children}</main>
         <Footer />
       </Box>

@@ -2,43 +2,62 @@ import React from "react"
 
 import Img from "gatsby-image"
 
-import { Box, Button, Flex, Heading, Text, VStack, Wrapper } from "components"
+import {
+  Button,
+  Column,
+  Columns,
+  Flex,
+  Heading,
+  Inline,
+  Text,
+  VStack,
+  Wrapper,
+} from "components"
 
-const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
+const Library = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
-      <Box maxWidth="710px">
-        <VStack space="layout.3">
-          <Heading children={title} size={700} />
+      <VStack space="layout.2">
+        <Heading children={title} size={700} />
 
-          <Flex flexDirection={["column", "column", "row"]}>
-            {/* Cover */}
-            <Box width="276px" height="412px" m="auto">
-              <Img fixed={cover} />
-            </Box>
+        {/* Title and genre */}
+        <Columns space="layout.4">
+          <Column width={[1 / 1, 1 / 1, 1 / 1, 1 / 2]}>
+            <VStack space="layout.3">
+              <Text children={synopsis} size={400} />
+              <Inline space="spacing.2">
+                <Heading children="Available on " size={400} color="text" />
+                {buttons.map((button, index) => {
+                  let APPEND = ", "
+                  if (index === buttons.length - 1) {
+                    APPEND = ""
+                  }
 
-            {/* Title and genre */}
-            <Box pl={[0, 0, "layout.4"]} pt={["layout.3", "layout.3", 0]}>
-              <VStack space="layout.3">
-                <Text children={synopsis} size={400} />
-                <Box>
-                  {buttons.map((button, index) => (
-                    <Button
-                      label={button.label}
-                      link={button.link}
-                      color="text"
-                      size={400}
-                      key={"bookButton" + index}
-                    />
-                  ))}
-                </Box>
-              </VStack>
-            </Box>
-          </Flex>
-        </VStack>
-      </Box>
+                  return (
+                    <Flex key={"bookButton" + index}>
+                      <Button
+                        label={button.label}
+                        link={button.link}
+                        size={400}
+                      />
+                      <Heading children={APPEND} size={400} color="text" />
+                    </Flex>
+                  )
+                })}
+              </Inline>
+            </VStack>
+          </Column>
+          {/* Cover Art */}
+          <Column width={1 / 4}>
+            <Img
+              fixed={cover}
+              style={{ borderRadius: "6px", boxShadow: "0px 8px 20px grey" }}
+            />
+          </Column>
+        </Columns>
+      </VStack>
     </Wrapper>
   )
 }
 
-export default BookBlock
+export default Library
