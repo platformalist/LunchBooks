@@ -5,6 +5,9 @@ import Img from "gatsby-image/withIEPolyfill"
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
 function NavItem({ label, link, pageName }) {
+  console.log(pageName)
+  console.log(link)
+
   let UNDERLINE = pageName === link ? true : false
 
   if (label && link)
@@ -100,7 +103,7 @@ const IMAGE_QUERY = graphql`
       }
     }
 
-    blogHeader: file(relativePath: { eq: "hero_drabbles.jpg" }) {
+    blogHeader: file(relativePath: { eq: "hero_blog.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200, quality: 85) {
           ...GatsbyImageSharpFluid
