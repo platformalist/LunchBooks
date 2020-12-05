@@ -20,7 +20,7 @@ export default {
     lineHeight: 0.9,
   },
   "700": {
-    fontFamily: fonts.extended,
+    fontFamily: fonts.title,
     fontSize: "48px",
     fontWeight: "bold",
     lineHeight: 0.9,

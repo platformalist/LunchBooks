@@ -5,18 +5,14 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Box, Heading, RichText, SEO, VStack, Wrapper } from "components"
 import { PageHeader } from "views"
 
-const BlogPost = ({ title, date, html }) => (
+const BlogPost = ({ title, html }) => (
   <Wrapper>
-    <Heading
-      children={title}
-      size={[600, 700, 750]}
-      color="text"
-      pb="layout.2"
-    />
-    <Box maxWidth="600px" pb="layout.6">
-      {/* <Heading children={date} size={[200, 300, 400]} color="text" /> */}
-      <RichText content={{ html: html }} />
-    </Box>
+    <VStack space="layout.2">
+      <Heading children={title} size={700} color="text" />
+      <Box width={[1 / 1, 1 / 1, 1 / 1, 1 / 2]}>
+        <RichText content={{ html: html }} />
+      </Box>
+    </VStack>
   </Wrapper>
 )
 
@@ -37,12 +33,13 @@ const BlogPage = () => {
           body=""
           image={homeHeader.childImageSharp.fluid}
         />
-        <VStack space="layout.5">
+        <VStack space="layout.8">
           {blogPosts.nodes.map((post, index) => (
             <BlogPost
               title={post.frontmatter.title}
               date={post.frontmatter.date}
               html={post.html}
+              key={"blogPost" + index}
             />
           ))}
         </VStack>
