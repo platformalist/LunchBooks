@@ -1,7 +1,6 @@
 import React from "react"
 
 import Img from "gatsby-image/withIEPolyfill"
-import { Link } from "gatsby"
 
 import { Box, Heading, Wrapper } from "components"
 import { NavBar } from "views"
@@ -30,7 +29,8 @@ const PageHeader = ({ title, image }) => (
       <Box position="relative">
         <Wrapper>
           <Heading
-            children={title}
+            // children={title}
+            children="James Prower"
             size={[750, 800, 900]}
             color="background"
             textAlign={["right", "left"]}
