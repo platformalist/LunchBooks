@@ -8,7 +8,7 @@ const BookBlock = ({ title, genre, cover, synopsis, buttons }) => {
   return (
     <Wrapper>
       <Box maxWidth="900px">
-        <Flex pt="layout.1" flexDirection={["column", "column", "row"]}>
+        <Flex flexDirection={["column", "column", "row"]}>
           {/* Cover */}
           <Box width="276px" height="412px" m="auto">
             <Img fixed={cover} />

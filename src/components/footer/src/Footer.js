@@ -2,13 +2,20 @@ import React from "react"
 
 import { Heading, Wrapper } from "components"
 
-const Footer = ({ text }) => {
+function Footer() {
   const today = new Date()
   let thisYear = today.getFullYear()
   let finalString =
     thisYear === 2020 ? "© " + thisYear + " " : "© 2020-" + thisYear + " "
   return (
-    <Wrapper py="layout.5">
+    <Wrapper
+      data-component-id="footer"
+      as="footer"
+      mt="auto"
+      pt="layout.6"
+      pb="layout.5"
+      position="relative"
+    >
       <Heading
         children={finalString + "James Prower"}
         size={[350, 350, 400]}

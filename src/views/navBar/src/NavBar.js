@@ -24,7 +24,7 @@ function NavItem({ label, link }) {
 
 function NavBar() {
   return (
-    <Wrapper py="layout.2" bg="background">
+    <Wrapper py="layout.2" mb="layout.6" bg="background">
       <Inline space="layout.3">
         <NavItem label="Home" link="/" />
         <NavItem label="About" link="/about" />

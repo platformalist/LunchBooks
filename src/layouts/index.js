@@ -1,14 +1,20 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { ThemeProvider } from "emotion-theming"
 import Helmet from "react-helmet"
 
 // Project components
-import { Footer, GlobalStyles, Header, Theme } from "components"
+import { Box, Footer, GlobalStyles, Header, Theme } from "components"
 
 import "./fonts.css"
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    // Set static viewport height unit on resize and on load
+    let vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
+  }, [])
+
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
@@ -17,9 +23,11 @@ const Layout = ({ children }) => {
       </Helmet>
 
       <GlobalStyles />
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <Box display="flex" flexDirection="column" minHeight="100vh">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </Box>
     </ThemeProvider>
   )
 }

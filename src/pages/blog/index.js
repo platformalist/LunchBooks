@@ -2,7 +2,7 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Box, Heading, RichText, SEO, Wrapper } from "components"
+import { Box, Heading, RichText, SEO, VStack, Wrapper } from "components"
 import { PageHeader } from "views"
 
 const BlogPost = ({ title, date, html }) => (
@@ -12,7 +12,6 @@ const BlogPost = ({ title, date, html }) => (
       size={[600, 700, 750]}
       color="text"
       pb="layout.2"
-      pt="layout.6"
     />
     <Box maxWidth="600px" pb="layout.6">
       {/* <Heading children={date} size={[200, 300, 400]} color="text" /> */}
@@ -38,13 +37,15 @@ const BlogPage = () => {
           body=""
           image={homeHeader.childImageSharp.fluid}
         />
-        {blogPosts.nodes.map((post, index) => (
-          <BlogPost
-            title={post.frontmatter.title}
-            date={post.frontmatter.date}
-            html={post.html}
-          />
-        ))}
+        <VStack space="layout.5">
+          {blogPosts.nodes.map((post, index) => (
+            <BlogPost
+              title={post.frontmatter.title}
+              date={post.frontmatter.date}
+              html={post.html}
+            />
+          ))}
+        </VStack>
       </Box>
     </>
   )

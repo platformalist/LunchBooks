@@ -4,7 +4,7 @@ import { AspectRatio, Column, Columns, Text, Wrapper } from "components"
 
 function Biography({ image }) {
   return (
-    <Wrapper pt="layout.5">
+    <Wrapper>
       <Columns space="layout.5">
         <Column width={1 / 4}>
           <AspectRatio ratio="1:1" position="relative">
