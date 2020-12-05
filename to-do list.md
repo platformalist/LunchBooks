@@ -6,6 +6,7 @@ Make sure all text uses grey.
 
 Home
 Fix grid to match about page. Rethink how book displays - should we do a column with a big version of the book? Or a nice big circle with the book inside?
+Maybe add a shadow like kobo does - on the query might look alright
 
 Split Blog into separate pages.
 Add images for Blog posts, and feed them through into the header so you get a different texture for every blog post.
