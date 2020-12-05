@@ -31,9 +31,8 @@ const PageHeader = ({ title, image }) => (
           <Heading
             // children={title}
             children="James Prower"
-            size={[750, 800, 900]}
+            size={[700, 800, 900]}
             color="background"
-            textAlign={["right", "left"]}
           />
         </Wrapper>
       </Box>
