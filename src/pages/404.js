@@ -2,7 +2,7 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Heading, SEO, Text, Wrapper } from "components"
+import { Heading, SEO, Text, VStack, Wrapper } from "components"
 
 const NotFoundPage = () => {
   const { opengraph } = useStaticQuery(NO_PAGE_QUERY)
@@ -16,11 +16,13 @@ const NotFoundPage = () => {
       />
 
       <Wrapper py="layout.7">
-        <Heading children="404: Page Not Found" size={700} color="text" />
-        <Text
-          children="You found a page that doesn't exist! Well done."
-          color="text"
-        />
+        <VStack space="layout.2">
+          <Heading children="404: Page Not Found" size={700} color="text" />
+          <Text
+            children="You found a page that doesn't exist! You dreamer, you!"
+            color="text"
+          />
+        </VStack>
       </Wrapper>
     </>
   )
