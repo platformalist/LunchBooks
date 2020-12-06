@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+
 import PropTypes from "prop-types"
 import { ThemeProvider } from "emotion-theming"
 import Helmet from "react-helmet"
@@ -16,34 +16,6 @@ const Layout = ({ children, location }) => {
     document.documentElement.style.setProperty("--vh", `${vh}px`)
   }, [])
 
-  // Set headerImage based on page name
-  const { aboutHeader, blogHeader, homeHeader } = useStaticQuery(IMAGE_QUERY)
-
-  let BANNER = homeHeader
-
-  switch (location.pathname) {
-    case "/about":
-      BANNER = aboutHeader
-      break
-    case "/blog":
-      BANNER = blogHeader
-      break
-    default:
-      BANNER = homeHeader
-  }
-
-  // Define which links appear in the navbar
-  const navButtons = [
-    { label: "Home", link: "/", active: false },
-    { label: "About", link: "/about", active: false },
-    { label: "Blog", link: "/blog", active: false },
-    {
-      label: "Twitter",
-      link: "https://twitter.com/ProwerJames",
-      active: false,
-    },
-  ]
-
   return (
     <ThemeProvider theme={Theme}>
       <Helmet>
@@ -53,7 +25,7 @@ const Layout = ({ children, location }) => {
 
       <GlobalStyles />
       <Box display="flex" flexDirection="column" minHeight="100vh">
-        <Header banner={BANNER} navButtons={navButtons} />
+        <Header path={location.pathname} />
 
         <main>{children}</main>
         <Footer />
@@ -65,32 +37,5 @@ const Layout = ({ children, location }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
-const IMAGE_QUERY = graphql`
-  {
-    aboutHeader: file(relativePath: { eq: "hero_about.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    blogHeader: file(relativePath: { eq: "hero_blog.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 export default Layout
