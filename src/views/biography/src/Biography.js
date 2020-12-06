@@ -11,26 +11,27 @@ function Biography({ image }) {
             <Heading children="Portals and invisible places" size={700} />
             <Text size={400} color="text">
               James Prower is a Canadian author of sci-fi, fantasy, and
-              supernatural fiction, specializing in short stories and poetic
-              tidbits, though he also writes poetry and novels when the stars
-              align.
+              supernatural fiction, specializing in short stories and novels,
+              though he also dabbles in poetry. He’s currently on the science
+              fiction short-story submission circuit.
               <br />
               <br />
-              He’s currently on the science fiction circuit, submitting to great
-              sci-fi anthologies that you know and love. His current saga of
-              novels—beginning with <i>A Being of Some Cosmic Importance</i>
+              Prower's saga of novels—beginning with{" "}
+              <i>A Being of Some Cosmic Importance</i>
               —revolves around the political and ethical ramifications of warp
               travel, and the individuals affected by dangerous policies and
-              technology. When it comes to short stories, Prower primarily
-              focuses on parallel universes, mysterious objects from other
-              worlds, and happenstance meetings with strange, rare creatures.
+              technology. For short stories, Prower primarily focuses on
+              parallel universes, mysterious objects from other worlds, and
+              happenstance meetings with strange, rare creatures.
               <br />
               <br />
               If you’d like to speak with James, ask about his work, or inquire
               about anything else, send an email to{" "}
-              <a href="mailto:inquiries@jamesprower.com">
-                inquiries@jamesprower.com
-              </a>{" "}
+              <u>
+                <a href="mailto:inquiries@jamesprower.com">
+                  inquiries@jamesprower.com
+                </a>
+              </u>{" "}
               and he’ll be sure to get back to you.
             </Text>
           </VStack>

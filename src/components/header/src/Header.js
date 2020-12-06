@@ -8,16 +8,17 @@ function NavItem({ label, link, pageName }) {
   console.log(pageName)
   console.log(link)
 
-  let UNDERLINE = pageName === link ? true : false
+  // let UNDERLINE = pageName === link ? true : false
 
   if (label && link)
     return (
       <Button
         label={label}
         link={link}
-        underline={UNDERLINE}
+        // underline={UNDERLINE}
+        underline={false}
         color="text"
-        size={[350, 350, 400]}
+        size={400}
       />
     )
   else return null

@@ -18,7 +18,7 @@ function Footer() {
     >
       <Heading
         children={finalString + "James Prower"}
-        size={[350, 350, 400]}
+        size={400}
         color="text"
       />
     </Wrapper>
