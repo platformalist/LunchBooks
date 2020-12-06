@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Header, SEO } from "components"
+import { SEO } from "components"
 import { Library } from "views"
 
-function IndexPage({ location }) {
+function IndexPage() {
   const { cosmicCover, opengraph } = useStaticQuery(IMAGE_QUERY)
 
   const BookList = [
@@ -63,7 +63,6 @@ function IndexPage({ location }) {
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
-      <Header location={location} />
 
       {BookList &&
         BookList[0] &&

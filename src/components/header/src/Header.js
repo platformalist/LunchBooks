@@ -1,16 +1,15 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
-function NavItem({ label, link, pathname }) {
+function NavItem({ label, link, active }) {
   if (label && link)
     return (
       <Button
         label={label}
         link={link}
-        underline={pathname === link ? true : false}
+        underline={active}
         color="text"
         size={400}
       />
@@ -18,37 +17,13 @@ function NavItem({ label, link, pathname }) {
   else return null
 }
 
-function Header({ location }) {
-  const { aboutHeader, blogHeader, homeHeader } = useStaticQuery(IMAGE_QUERY)
-
-  let BANNER = homeHeader
-
-  // Set headerImage based on page name
-  switch (location.pathname) {
-    case "/about":
-      BANNER = aboutHeader
-      break
-    case "/blog":
-      BANNER = blogHeader
-      break
-    default:
-      BANNER = homeHeader
-  }
-
-  // Define which links appear in the navbar
-  const NavButtons = [
-    { label: "Home", link: "/" },
-    { label: "About", link: "/about" },
-    { label: "Blog", link: "/blog" },
-    { label: "Twitter", link: "https://twitter.com/ProwerJames" },
-  ]
-
+function Header({ banner, navButtons }) {
   return (
     <div data-component-id="header" as="header">
       <Box position="relative" width="100vw" py={["32px", "48px", "56px"]}>
-        {BANNER && (
+        {banner && (
           <Img
-            fluid={BANNER.childImageSharp.fluid}
+            fluid={banner.childImageSharp.fluid}
             objectFit="cover"
             style={{
               position: "absolute",
@@ -73,15 +48,15 @@ function Header({ location }) {
       {/* NavBar */}
       <Wrapper py="layout.2" mb="layout.6" bg="background">
         <Inline space="layout.3">
-          {NavButtons &&
-            NavButtons[0] &&
-            NavButtons.map((item, index) => {
+          {navButtons &&
+            navButtons[0] &&
+            navButtons.map((item, index) => {
               if (item && item.label && item.link)
                 return (
                   <NavItem
                     label={item.label}
                     link={item.link}
-                    {...location}
+                    active={item.active}
                     key={"headerNavItem" + index}
                   />
                 )
@@ -92,32 +67,5 @@ function Header({ location }) {
     </div>
   )
 }
-
-const IMAGE_QUERY = graphql`
-  {
-    aboutHeader: file(relativePath: { eq: "hero_about.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
-    blogHeader: file(relativePath: { eq: "hero_blog.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 export default Header

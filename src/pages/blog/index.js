@@ -2,15 +2,7 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import {
-  Box,
-  Heading,
-  Header,
-  RichText,
-  SEO,
-  VStack,
-  Wrapper,
-} from "components"
+import { Box, Heading, RichText, SEO, VStack, Wrapper } from "components"
 
 const BlogPost = ({ title, html }) => (
   <Wrapper>
@@ -23,7 +15,7 @@ const BlogPost = ({ title, html }) => (
   </Wrapper>
 )
 
-const BlogPage = ({ location }) => {
+const BlogPage = () => {
   const { blogPosts, opengraph } = useStaticQuery(POST_QUERY)
 
   return (
@@ -34,7 +26,6 @@ const BlogPage = ({ location }) => {
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
-      <Header location={location} />
 
       <VStack space="layout.8">
         {blogPosts.nodes.map((post, index) => (
