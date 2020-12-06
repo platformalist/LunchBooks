@@ -44,33 +44,32 @@ function Header({ location }) {
   ]
 
   return (
-    <>
-      <>
-        <Box position="relative" width="100vw" py={["32px", "48px", "56px"]}>
-          {BANNER && (
-            <Img
-              fluid={BANNER.childImageSharp.fluid}
-              objectFit="cover"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-              }}
+    <div data-component-id="header" as="header">
+      <Box position="relative" width="100vw" py={["32px", "48px", "56px"]}>
+        {BANNER && (
+          <Img
+            fluid={BANNER.childImageSharp.fluid}
+            objectFit="cover"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        )}
+        <Box position="relative">
+          <Wrapper>
+            <Heading
+              children="James Prower"
+              size={[700, 800, 900]}
+              color="background"
             />
-          )}
-          <Box position="relative">
-            <Wrapper>
-              <Heading
-                children="James Prower"
-                size={[700, 800, 900]}
-                color="background"
-              />
-            </Wrapper>
-          </Box>
+          </Wrapper>
         </Box>
-      </>
+      </Box>
+
       {/* NavBar */}
       <Wrapper py="layout.2" mb="layout.6" bg="background">
         <Inline space="layout.3">
@@ -90,7 +89,7 @@ function Header({ location }) {
             })}
         </Inline>
       </Wrapper>
-    </>
+    </div>
   )
 }
 

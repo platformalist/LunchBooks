@@ -1,10 +1,10 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { SEO } from "components"
+import { Header, SEO } from "components"
 import { Biography } from "views"
 
-function AboutPage() {
+function AboutPage({ location }) {
   const { opengraph } = useStaticQuery(IMAGE_QUERY)
 
   return (
@@ -15,6 +15,7 @@ function AboutPage() {
         imageOpenGraph={opengraph.publicURL}
         imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
       />
+      <Header location={location} />
 
       <Biography />
     </>

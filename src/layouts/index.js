@@ -24,9 +24,9 @@ const Layout = ({ children, location }) => {
 
       <GlobalStyles />
       <Box display="flex" flexDirection="column" minHeight="100vh">
-        <Header location={location} />
+        {/* <Header location={location} /> */}
 
-        <main>{children}</main>
+        <main location={location}>{children}</main>
         <Footer />
       </Box>
     </ThemeProvider>
