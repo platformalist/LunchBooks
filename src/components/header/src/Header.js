@@ -1,22 +1,16 @@
-import React, { useState } from "react"
+import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
 
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
-function NavItem({ label, link, pageName }) {
-  console.log(pageName)
-  console.log(link)
-
-  // let UNDERLINE = pageName === link ? true : false
-
+function NavItem({ label, link, pathname }) {
   if (label && link)
     return (
       <Button
         label={label}
         link={link}
-        // underline={UNDERLINE}
-        underline={false}
+        underline={pathname === link ? true : false}
         color="text"
         size={400}
       />
@@ -26,36 +20,36 @@ function NavItem({ label, link, pageName }) {
 
 function Header({ location }) {
   const { aboutHeader, blogHeader, homeHeader } = useStaticQuery(IMAGE_QUERY)
-  const [headerImage, setHeaderImage] = useState(homeHeader)
 
-  // Determine which page we're on
-  const PAGE_NAME =
-    location && location.href
-      ? location.href.substring(
-          location.href.lastIndexOf("/"),
-          location.href.length
-        )
-      : ""
+  let BANNER = homeHeader
 
   // Set headerImage based on page name
-  // switch (PAGE_NAME) {
-  //   case "about":
-  //     setHeaderImage(aboutHeader)
-  //     break
-  //   case "blog":
-  //     setHeaderImage(blogHeader)
-  //     break
-  //   default:
-  //     setHeaderImage(homeHeader)
-  // }
+  switch (location.pathname) {
+    case "/about":
+      BANNER = aboutHeader
+      break
+    case "/blog":
+      BANNER = blogHeader
+      break
+    default:
+      BANNER = homeHeader
+  }
+
+  // Define which links appear in the navbar
+  const NavButtons = [
+    { label: "Home", link: "/" },
+    { label: "About", link: "/about" },
+    { label: "Blog", link: "/blog" },
+    { label: "Twitter", link: "https://twitter.com/ProwerJames" },
+  ]
 
   return (
     <>
       <>
         <Box position="relative" width="100vw" py={["32px", "48px", "56px"]}>
-          {homeHeader && (
+          {BANNER && (
             <Img
-              fluid={headerImage.childImageSharp.fluid}
+              fluid={BANNER.childImageSharp.fluid}
               objectFit="cover"
               style={{
                 position: "absolute",
@@ -80,14 +74,20 @@ function Header({ location }) {
       {/* NavBar */}
       <Wrapper py="layout.2" mb="layout.6" bg="background">
         <Inline space="layout.3">
-          <NavItem label="Home" link="/" pageName={PAGE_NAME} />
-          <NavItem label="About" link="/about" pageName={PAGE_NAME} />
-          <NavItem label="Blog" link="/blog" pageName={PAGE_NAME} />
-          <NavItem
-            label="Twitter"
-            link="https://twitter.com/ProwerJames"
-            pageName={PAGE_NAME}
-          />
+          {NavButtons &&
+            NavButtons[0] &&
+            NavButtons.map((item, index) => {
+              if (item && item.label && item.link)
+                return (
+                  <NavItem
+                    label={item.label}
+                    link={item.link}
+                    {...location}
+                    key={"headerNavItem" + index}
+                  />
+                )
+              else return null
+            })}
         </Inline>
       </Wrapper>
     </>
