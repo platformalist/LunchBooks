@@ -5,16 +5,20 @@ import Img from "gatsby-image/withIEPolyfill"
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
 function NavItem({ label, link, pageName }) {
-  let UNDERLINE = pageName === link ? true : false
+  console.log(pageName)
+  console.log(link)
+
+  // let UNDERLINE = pageName === link ? true : false
 
   if (label && link)
     return (
       <Button
         label={label}
         link={link}
-        underline={UNDERLINE}
+        // underline={UNDERLINE}
+        underline={false}
         color="text"
-        size={[350, 350, 400]}
+        size={400}
       />
     )
   else return null
