@@ -3,13 +3,13 @@ import Img from "gatsby-image/withIEPolyfill"
 
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
-function NavItem({ currentPath, label, link }) {
+function NavItem({ path, label, link }) {
   if (label && link)
     return (
       <Button
         label={label}
         link={link}
-        underline={link === currentPath ? true : false}
+        underline={path === "/" ? link === path : link.startsWith(path)}
         color="text"
         size={400}
       />
@@ -18,22 +18,16 @@ function NavItem({ currentPath, label, link }) {
 }
 
 function Header({ banners, path, navButtons }) {
-  const [currentPath, setCurrentPath] = useState("/")
-
-  useEffect(() => {
-    setCurrentPath(path)
-  }, [path])
-
   return (
     <div data-component-id="header" as="header">
       <Box position="relative" width="100vw" py={["32px", "48px", "56px"]}>
         <Img
           fluid={
-            currentPath === "/"
+            path === "/"
               ? banners.homeHeader.childImageSharp.fluid
-              : currentPath === "/about"
+              : path.startsWith("/about")
               ? banners.aboutHeader.childImageSharp.fluid
-              : currentPath === "/blog"
+              : path.startsWith("/blog")
               ? banners.blogHeader.childImageSharp.fluid
               : banners.homeHeader.childImageSharp.fluid
           }
@@ -69,7 +63,7 @@ function Header({ banners, path, navButtons }) {
                   <NavItem
                     label={item.label}
                     link={item.link}
-                    currentPath={currentPath}
+                    path={path}
                     key={"headerNavItem" + index}
                   />
                 )
