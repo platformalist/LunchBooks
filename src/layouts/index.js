@@ -22,8 +22,8 @@ const Layout = ({ children, location }) => {
   // Define which links appear in the navbar
   const NAV_BUTTONS = [
     { label: "Home", link: "/" },
-    { label: "About", link: "/about" },
-    { label: "Blog", link: "/blog" },
+    { label: "About", link: "/about/" },
+    { label: "Blog", link: "/blog/" },
     {
       label: "Twitter",
       link: "https://twitter.com/ProwerJames",
