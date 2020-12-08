@@ -57,7 +57,7 @@ const POST_QUERY = graphql`
     opengraph: file(relativePath: { eq: "opengraph.jpg" }) {
       publicURL
       childImageSharp {
-        fixed(width: 1200, height: 627) {
+        fixed(width: 1200, height: 627, quality: 75) {
           ...GatsbyImageSharpFixed
         }
       }

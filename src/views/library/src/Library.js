@@ -51,6 +51,8 @@ const Library = ({ title, genre, cover, synopsis, buttons }) => {
           <Column width={1 / 4}>
             <Img
               fixed={cover}
+              durationFadeIn={0}
+              loading="eager"
               style={{
                 borderRadius: "6px",
                 boxShadow: "0px 8px 20px grey",

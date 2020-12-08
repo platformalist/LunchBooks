@@ -60,7 +60,7 @@ const IMAGE_QUERY = graphql`
   {
     aboutHeader: file(relativePath: { eq: "hero_about.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
+        fluid(maxWidth: 1200, quality: 75) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -68,14 +68,14 @@ const IMAGE_QUERY = graphql`
 
     blogHeader: file(relativePath: { eq: "hero_blog.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
+        fluid(maxWidth: 1200, quality: 75) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     homeHeader: file(relativePath: { eq: "hero_index.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200, quality: 85) {
+        fluid(maxWidth: 1200, quality: 75) {
           ...GatsbyImageSharpFluid
         }
       }

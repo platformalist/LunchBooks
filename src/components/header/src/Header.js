@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Img from "gatsby-image/withIEPolyfill"
 
 import { Box, Button, Heading, Inline, Wrapper } from "components"
@@ -39,6 +39,8 @@ function Header({ banners, path, navButtons }) {
             width: "100%",
             height: "100%",
           }}
+          durationFadeIn={0}
+          loading="eager"
         />
         )
         <Box position="relative">

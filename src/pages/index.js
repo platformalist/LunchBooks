@@ -67,15 +67,7 @@ function IndexPage() {
       {BookList &&
         BookList[0] &&
         BookList.map((book, index) => (
-          <Library
-            title={book.title}
-            genre={book.genre}
-            cover={book.cover}
-            synopsis={book.synopsis}
-            buttons={book.buttons}
-            index={index}
-            key={"bookBlock" + index}
-          />
+          <Library {...book} key={"libraryItem" + index} />
         ))}
     </>
   )
@@ -85,7 +77,7 @@ const IMAGE_QUERY = graphql`
   {
     cosmicCover: file(relativePath: { eq: "ABOSCI_Cover.jpg" }) {
       childImageSharp {
-        fixed(width: 276, height: 412, quality: 85) {
+        fixed(width: 276, height: 412, quality: 75) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -93,7 +85,7 @@ const IMAGE_QUERY = graphql`
     opengraph: file(relativePath: { eq: "opengraph.jpg" }) {
       publicURL
       childImageSharp {
-        fixed(width: 1200, height: 627) {
+        fixed(width: 1200, height: 627, quality: 75) {
           ...GatsbyImageSharpFixed
         }
       }
