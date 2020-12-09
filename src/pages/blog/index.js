@@ -2,18 +2,8 @@ import React from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Box, Heading, RichText, SEO, VStack, Wrapper } from "components"
-
-const BlogPost = ({ title, html }) => (
-  <Wrapper>
-    <VStack space="layout.2">
-      <Heading children={title} size={700} color="text" />
-      <Box width={[1 / 1, 1 / 1, 1 / 1, 1 / 2]}>
-        <RichText content={{ html: html }} />
-      </Box>
-    </VStack>
-  </Wrapper>
-)
+import { SEO, VStack } from "components"
+import { BlogPost } from "views"
 
 const BlogPage = () => {
   const { blogPosts, opengraph } = useStaticQuery(POST_QUERY)

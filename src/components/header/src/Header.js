@@ -4,6 +4,13 @@ import Img from "gatsby-image/withIEPolyfill"
 import { Box, Button, Heading, Inline, Wrapper } from "components"
 
 function NavItem({ path, label, link }) {
+  // Tell the nav that we're on 'blog' if we're on a specific blog post, so the
+  // highlighted item is correct.
+
+  if (path.startsWith("/blog/")) {
+    path = "/blog/"
+  }
+
   if (label && link)
     return (
       <Button
