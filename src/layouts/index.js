@@ -17,13 +17,13 @@ const Layout = ({ children, location }) => {
     document.documentElement.style.setProperty("--vh", `${vh}px`)
   }, [])
 
-  const BANNERS = useStaticQuery(IMAGE_QUERY)
+  const QUERY = useStaticQuery(IMAGE_QUERY)
 
   // Define which links appear in the navbar
   const NAV_BUTTONS = [
     { label: "Home", link: "/" },
     { label: "About", link: "/about/" },
-    { label: "Blog", link: "/blog/" },
+    { label: "Blog", link: QUERY.blogPosts.nodes[0].frontmatter.path },
     {
       label: "Twitter",
       link: "https://twitter.com/ProwerJames",
@@ -41,7 +41,7 @@ const Layout = ({ children, location }) => {
       <Box display="flex" flexDirection="column" minHeight="100vh">
         <Header
           path={location.pathname}
-          banners={BANNERS}
+          banners={QUERY}
           navButtons={NAV_BUTTONS}
         />
 
@@ -78,6 +78,18 @@ const IMAGE_QUERY = graphql`
         fluid(maxWidth: 1200, quality: 75) {
           ...GatsbyImageSharpFluid
         }
+      }
+    }
+    blogPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
+      nodes {
+        frontmatter {
+          date
+          title
+          path
+        }
+        html
       }
     }
   }

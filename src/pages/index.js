@@ -59,9 +59,9 @@ function IndexPage() {
     <>
       <SEO
         title="Home"
-        description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
+        description="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
         imageOpenGraph={opengraph.publicURL}
-        imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
+        imageAlt="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
       />
 
       {BookList &&
