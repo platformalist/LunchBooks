@@ -1,6 +1,14 @@
 import React from "react"
 
-import { Column, Columns, Heading, Text, VStack, Wrapper } from "components"
+import {
+  Column,
+  Columns,
+  Heading,
+  Link,
+  Text,
+  VStack,
+  Wrapper,
+} from "components"
 
 function Biography({ image }) {
   return (
@@ -28,9 +36,9 @@ function Biography({ image }) {
               If you’d like to speak with James, ask about his work, or inquire
               about anything else, send an email to{" "}
               <u>
-                <a href="mailto:inquiries@jamesprower.com">
+                <Link href="mailto:inquiries@jamesprower.com">
                   inquiries@jamesprower.com
-                </a>
+                </Link>
               </u>{" "}
               and he’ll be sure to get back to you.
             </Text>
