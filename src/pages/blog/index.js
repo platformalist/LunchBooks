@@ -12,9 +12,9 @@ const BlogPage = () => {
     <>
       <SEO
         title="Blog"
-        description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
+        description="Short stories and poetic prompts by Canadian sci-fi and fantasy author James Prower. Prower primarily focuses on parallel universes, mysterious objects from other worlds, and happenstance meetings with strange, rare creatures."
         imageOpenGraph={opengraph.publicURL}
-        imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
+        imageAlt="Peach and green storm clouds"
       />
 
       <VStack space="layout.8">

@@ -59,9 +59,9 @@ function IndexPage() {
     <>
       <SEO
         title="Home"
-        description="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
+        description="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels. Prower primarily focuses on parallel universes, mysterious objects from other worlds, and happenstance meetings with strange, rare creatures."
         imageOpenGraph={opengraph.publicURL}
-        imageAlt="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
+        imageAlt="Peach and green storm clouds"
       />
 
       {BookList &&

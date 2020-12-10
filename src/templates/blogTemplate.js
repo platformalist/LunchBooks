@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { Flex, Heading, SEO, VStack, Wrapper } from "components"
+import { Flex, Heading, Link, SEO, VStack, Wrapper } from "components"
 import { BlogPost } from "views"
 
 function BlogNav({ next, previous }) {
@@ -11,16 +11,16 @@ function BlogNav({ next, previous }) {
       <Flex justifyContent="space-between" width={1 / 2}>
         <div>
           {previous && (
-            <a href={previous}>
+            <Link href={previous}>
               <Heading children="Previous Post" size={400} />
-            </a>
+            </Link>
           )}
         </div>
         {next && (
           <div>
-            <a href={next}>
+            <Link href={next}>
               <Heading children="Next Post" size={400} />
-            </a>
+            </Link>
           </div>
         )}
       </Flex>
@@ -62,9 +62,9 @@ export default function Template({
     <>
       <SEO
         title={frontmatter.title + " | James Prower"}
-        description="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
+        description="Short stories and poetic prompts by Canadian sci-fi and fantasy author James Prower. Prower primarily focuses on parallel universes, mysterious objects from other worlds, and happenstance meetings with strange, rare creatures."
         imageOpenGraph={opengraph.publicURL}
-        imageAlt="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels."
+        imageAlt="Peach and green storm clouds"
       />
 
       <VStack space="layout.4">

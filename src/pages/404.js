@@ -9,10 +9,10 @@ const NotFoundPage = () => {
   return (
     <>
       <SEO
-        title="404: Page not found"
-        description="Author of science fiction, including 'A Being of Some Cosmic Importance'. Send any questions, concerns or inquiries to inquiries@jamesprower.com."
+        title="404 | James Prower"
+        description="James Prower is a Canadian author of sci-fi, fantasy, and supernatural fiction, specializing in short stories and novels. Prower primarily focuses on parallel universes, mysterious objects from other worlds, and happenstance meetings with strange, rare creatures."
         imageOpenGraph={opengraph.publicURL}
-        imageAlt="James Prower, the author of 'A Being of Some Cosmic Importance'."
+        imageAlt="Peach and green storm clouds"
       />
 
       <Wrapper py="layout.7">
