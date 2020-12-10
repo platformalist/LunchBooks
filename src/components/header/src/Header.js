@@ -49,7 +49,7 @@ function Header({ banners, path, navButtons }) {
           durationFadeIn={0}
           loading="eager"
         />
-        )
+
         <Box position="relative">
           <Wrapper>
             <Heading
