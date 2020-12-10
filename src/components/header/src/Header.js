@@ -52,12 +52,7 @@ function Header({ banners, path, navButtons }) {
 
         <Box position="relative">
           <Wrapper>
-            <Heading
-              children="James Prower"
-              size={900}
-              color="background"
-              pb="layout.1"
-            />
+            <Heading children="James Prower" size={900} color="background" />
           </Wrapper>
         </Box>
       </Box>
