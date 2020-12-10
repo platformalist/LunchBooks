@@ -54,7 +54,7 @@ function Header({ banners, path, navButtons }) {
           <Wrapper>
             <Heading
               children="James Prower"
-              size={[700, 800, 900]}
+              size={[750, 800, 900]}
               color="background"
             />
           </Wrapper>

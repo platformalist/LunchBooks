@@ -48,16 +48,18 @@ const Library = ({ title, genre, cover, synopsis, buttons }) => {
             </VStack>
           </Column>
           {/* Cover Art */}
-          <Column width={1 / 4}>
-            <Img
-              fixed={cover}
-              durationFadeIn={0}
-              loading="eager"
-              style={{
-                borderRadius: "6px",
-                boxShadow: "0px 8px 20px grey",
-              }}
-            />
+          <Column width={[1 / 1, 1 / 1, 1 / 1, 1 / 2]}>
+            <Flex width="100%" justifyContent={["center", "left"]}>
+              <Img
+                fixed={cover}
+                durationFadeIn={0}
+                loading="eager"
+                style={{
+                  borderRadius: "6px",
+                  boxShadow: "0px 8px 20px grey",
+                }}
+              />
+            </Flex>
           </Column>
         </Columns>
       </VStack>
