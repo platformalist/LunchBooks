@@ -56,7 +56,7 @@ const Library = ({ title, genre, cover, synopsis, buttons }) => {
                 loading="eager"
                 style={{
                   borderRadius: "6px",
-                  boxShadow: "0px 8px 20px grey",
+                  boxShadow: "0px 6px 16px grey",
                 }}
               />
             </Flex>

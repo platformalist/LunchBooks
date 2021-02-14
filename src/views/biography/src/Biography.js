@@ -19,9 +19,7 @@ function Biography({ image }) {
             <Heading children="Portals and invisible places" size={700} />
             <Text size={400} color="text">
               James Prower is a Canadian author of sci-fi, fantasy, and
-              supernatural fiction, specializing in short stories and novels,
-              though he also dabbles in poetry. He’s currently on the science
-              fiction short-story submission circuit.
+              supernatural fiction, specializing in short stories and novels.
               <br />
               <br />
               Prower's saga of novels—beginning with{" "}

@@ -77,7 +77,7 @@ const IMAGE_QUERY = graphql`
   {
     cosmicCover: file(relativePath: { eq: "ABOSCI_Cover.jpg" }) {
       childImageSharp {
-        fixed(width: 276, height: 412, quality: 75) {
+        fixed(width: 552, height: 828, quality: 85) {
           ...GatsbyImageSharpFixed
         }
       }
